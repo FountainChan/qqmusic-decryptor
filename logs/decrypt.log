@@ -1,0 +1,707 @@
+[2026-01-25 20:21:18] [INFO] 日志文件: logs/decrypt.log
+[2026-01-25 20:21:18] [INFO] ============================================================
+[2026-01-25 20:21:18] [INFO] QQ Music 批量解密工具 - CLI版本
+[2026-01-25 20:21:18] [INFO] ============================================================
+[2026-01-25 20:21:18] [INFO] 输入目录: G:\QQMusic\Download
+[2026-01-25 20:21:18] [INFO] 输出目录: G:\QQMusic\Decrypted
+[2026-01-25 20:21:18] [INFO] 保留目录结构: True
+[2026-01-25 20:21:18] [INFO] 跳过已存在: True
+[2026-01-25 20:21:18] [INFO] 最大重试次数: 3
+[2026-01-25 20:21:18] [INFO] 重试延迟: 2秒
+[2026-01-25 20:21:18] [INFO] ============================================================
+[2026-01-25 20:21:18] [ERROR] 连接QQ音乐进程失败: ambiguous name; it matches: QQMusic.exe (pid: 62736), QQMusic.exe (pid: 108168)
+[2026-01-25 20:21:18] [ERROR] 请确保: 1) QQ音乐正在运行 2) frida-server已启动
+[2026-01-25 20:34:29] [INFO] 日志文件: logs/decrypt.log
+[2026-01-25 20:34:29] [INFO] ============================================================
+[2026-01-25 20:34:29] [INFO] QQ Music 批量解密工具 - CLI版本
+[2026-01-25 20:34:29] [INFO] ============================================================
+[2026-01-25 20:34:29] [INFO] 输入目录: G:\QQMusic\Download
+[2026-01-25 20:34:29] [INFO] 输出目录: G:\QQMusic\Decrypted
+[2026-01-25 20:34:29] [INFO] 保留目录结构: True
+[2026-01-25 20:34:29] [INFO] 跳过已存在: True
+[2026-01-25 20:34:29] [INFO] 最大重试次数: 3
+[2026-01-25 20:34:29] [INFO] 重试延迟: 2秒
+[2026-01-25 20:34:29] [INFO] ============================================================
+[2026-01-25 20:34:29] [ERROR] 连接QQ音乐进程失败: ambiguous name; it matches: QQMusic.exe (pid: 62736), QQMusic.exe (pid: 108168)
+[2026-01-25 20:34:29] [ERROR] 请确保: 1) QQ音乐正在运行 2) frida-server已启动
+[2026-01-25 20:35:28] [INFO] 日志文件: logs/decrypt.log
+[2026-01-25 20:35:28] [INFO] ============================================================
+[2026-01-25 20:35:28] [INFO] QQ Music 批量解密工具 - CLI版本
+[2026-01-25 20:35:28] [INFO] ============================================================
+[2026-01-25 20:35:28] [INFO] 输入目录: G:\QQMusic\Download
+[2026-01-25 20:35:28] [INFO] 输出目录: G:\QQMusic\Decrypted
+[2026-01-25 20:35:28] [INFO] 保留目录结构: True
+[2026-01-25 20:35:28] [INFO] 跳过已存在: True
+[2026-01-25 20:35:28] [INFO] 最大重试次数: 3
+[2026-01-25 20:35:28] [INFO] 重试延迟: 2秒
+[2026-01-25 20:35:28] [INFO] ============================================================
+[2026-01-25 20:35:28] [ERROR] 连接QQ音乐进程失败: module 'frida' has no attribute 'enumerate_processes'
+[2026-01-25 20:35:28] [ERROR] 请确保: 1) QQ音乐正在运行 2) frida-server已启动
+[2026-01-25 20:36:09] [INFO] 日志文件: logs/decrypt.log
+[2026-01-25 20:36:09] [INFO] ============================================================
+[2026-01-25 20:36:09] [INFO] QQ Music 批量解密工具 - CLI版本
+[2026-01-25 20:36:09] [INFO] ============================================================
+[2026-01-25 20:36:09] [INFO] 输入目录: G:\QQMusic\Download
+[2026-01-25 20:36:09] [INFO] 输出目录: G:\QQMusic\Decrypted
+[2026-01-25 20:36:09] [INFO] 保留目录结构: True
+[2026-01-25 20:36:09] [INFO] 跳过已存在: True
+[2026-01-25 20:36:09] [INFO] 最大重试次数: 3
+[2026-01-25 20:36:09] [INFO] 重试延迟: 2秒
+[2026-01-25 20:36:09] [INFO] ============================================================
+[2026-01-25 20:36:09] [INFO] 发现 2 个QQ Music进程，选择PID 62736
+[2026-01-25 20:36:10] [INFO] 成功连接到QQ音乐进程
+[2026-01-25 20:36:10] [INFO] 解密脚本加载成功
+[2026-01-25 20:36:10] [INFO] 正在扫描目录: G:\QQMusic\Download
+[2026-01-25 20:36:10] [INFO] 找到 21 个加密文件
+[2026-01-25 20:36:10] [INFO] 正在处理: 1/21 (4.8%)
+[2026-01-25 20:36:10] [INFO] ------------------------------------------------------------
+[2026-01-25 20:36:10] [INFO] 正在解密: 01 我的秘密 (G_E_M_重生版).mflac
+[2026-01-25 20:36:10] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\01 我的秘密 (G_E_M_重生版).mflac
+[2026-01-25 20:36:10] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\01 我的秘密 (G_E_M_重生版).flac
+[2026-01-25 20:36:10] [INFO] 文件大小: 52.90 MB
+[2026-01-25 20:36:10] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:36:10] [INFO] 等待 2 秒后重试...
+[2026-01-25 20:36:12] [INFO] 正在解密: 01 我的秘密 (G_E_M_重生版).mflac
+[2026-01-25 20:36:12] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\01 我的秘密 (G_E_M_重生版).mflac
+[2026-01-25 20:36:12] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\01 我的秘密 (G_E_M_重生版).flac
+[2026-01-25 20:36:12] [INFO] 文件大小: 52.90 MB (重试 2/3)
+[2026-01-25 20:36:12] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:36:12] [INFO] 等待 2 秒后重试...
+[2026-01-25 20:36:14] [INFO] 正在解密: 01 我的秘密 (G_E_M_重生版).mflac
+[2026-01-25 20:36:14] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\01 我的秘密 (G_E_M_重生版).mflac
+[2026-01-25 20:36:14] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\01 我的秘密 (G_E_M_重生版).flac
+[2026-01-25 20:36:14] [INFO] 文件大小: 52.90 MB (重试 3/3)
+[2026-01-25 20:36:14] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:36:14] [INFO] 
+[2026-01-25 20:36:14] [INFO] 正在处理: 2/21 (9.5%)
+[2026-01-25 20:36:14] [INFO] ------------------------------------------------------------
+[2026-01-25 20:36:14] [INFO] 正在解密: 02 Where Did U Go (G_E_M_重生版).mflac
+[2026-01-25 20:36:14] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\02 Where Did U Go (G_E_M_重生版).mflac
+[2026-01-25 20:36:14] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\02 Where Did U Go (G_E_M_重生版).flac
+[2026-01-25 20:36:14] [INFO] 文件大小: 52.37 MB
+[2026-01-25 20:36:14] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:36:14] [INFO] 等待 2 秒后重试...
+[2026-01-25 20:36:16] [INFO] 正在解密: 02 Where Did U Go (G_E_M_重生版).mflac
+[2026-01-25 20:36:16] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\02 Where Did U Go (G_E_M_重生版).mflac
+[2026-01-25 20:36:16] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\02 Where Did U Go (G_E_M_重生版).flac
+[2026-01-25 20:36:16] [INFO] 文件大小: 52.37 MB (重试 2/3)
+[2026-01-25 20:36:16] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:36:16] [INFO] 等待 2 秒后重试...
+[2026-01-25 20:36:18] [INFO] 正在解密: 02 Where Did U Go (G_E_M_重生版).mflac
+[2026-01-25 20:36:18] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\02 Where Did U Go (G_E_M_重生版).mflac
+[2026-01-25 20:36:18] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\02 Where Did U Go (G_E_M_重生版).flac
+[2026-01-25 20:36:18] [INFO] 文件大小: 52.37 MB (重试 3/3)
+[2026-01-25 20:36:18] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:36:18] [INFO] 
+[2026-01-25 20:36:18] [INFO] 正在处理: 3/21 (14.3%)
+[2026-01-25 20:36:18] [INFO] ------------------------------------------------------------
+[2026-01-25 20:36:18] [INFO] 正在解密: 03 A_I_N_Y_ 爱你 (G_E_M_重生版).mflac
+[2026-01-25 20:36:18] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\03 A_I_N_Y_ 爱你 (G_E_M_重生版).mflac
+[2026-01-25 20:36:18] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\03 A_I_N_Y_ 爱你 (G_E_M_重生版).flac
+[2026-01-25 20:36:18] [INFO] 文件大小: 48.11 MB
+[2026-01-25 20:36:18] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:36:18] [INFO] 等待 2 秒后重试...
+[2026-01-25 20:36:20] [INFO] 正在解密: 03 A_I_N_Y_ 爱你 (G_E_M_重生版).mflac
+[2026-01-25 20:36:20] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\03 A_I_N_Y_ 爱你 (G_E_M_重生版).mflac
+[2026-01-25 20:36:20] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\03 A_I_N_Y_ 爱你 (G_E_M_重生版).flac
+[2026-01-25 20:36:20] [INFO] 文件大小: 48.11 MB (重试 2/3)
+[2026-01-25 20:36:20] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:36:20] [INFO] 等待 2 秒后重试...
+[2026-01-25 20:36:22] [INFO] 正在解密: 03 A_I_N_Y_ 爱你 (G_E_M_重生版).mflac
+[2026-01-25 20:36:22] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\03 A_I_N_Y_ 爱你 (G_E_M_重生版).mflac
+[2026-01-25 20:36:22] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\03 A_I_N_Y_ 爱你 (G_E_M_重生版).flac
+[2026-01-25 20:36:22] [INFO] 文件大小: 48.11 MB (重试 3/3)
+[2026-01-25 20:36:22] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:36:22] [INFO] 
+[2026-01-25 20:36:22] [INFO] 正在处理: 4/21 (19.0%)
+[2026-01-25 20:36:22] [INFO] ------------------------------------------------------------
+[2026-01-25 20:36:22] [INFO] 正在解密: 04 泡沫 (G_E_M_重生版).mflac
+[2026-01-25 20:36:22] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\04 泡沫 (G_E_M_重生版).mflac
+[2026-01-25 20:36:22] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\04 泡沫 (G_E_M_重生版).flac
+[2026-01-25 20:36:22] [INFO] 文件大小: 51.86 MB
+[2026-01-25 20:36:22] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:36:22] [INFO] 等待 2 秒后重试...
+[2026-01-25 20:36:24] [INFO] 正在解密: 04 泡沫 (G_E_M_重生版).mflac
+[2026-01-25 20:36:24] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\04 泡沫 (G_E_M_重生版).mflac
+[2026-01-25 20:36:24] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\04 泡沫 (G_E_M_重生版).flac
+[2026-01-25 20:36:24] [INFO] 文件大小: 51.86 MB (重试 2/3)
+[2026-01-25 20:36:24] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:36:24] [INFO] 等待 2 秒后重试...
+[2026-01-25 20:36:26] [INFO] 正在解密: 04 泡沫 (G_E_M_重生版).mflac
+[2026-01-25 20:36:26] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\04 泡沫 (G_E_M_重生版).mflac
+[2026-01-25 20:36:26] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\04 泡沫 (G_E_M_重生版).flac
+[2026-01-25 20:36:26] [INFO] 文件大小: 51.86 MB (重试 3/3)
+[2026-01-25 20:36:26] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:36:26] [INFO] 
+[2026-01-25 20:36:26] [INFO] 正在处理: 5/21 (23.8%)
+[2026-01-25 20:36:26] [INFO] ------------------------------------------------------------
+[2026-01-25 20:36:26] [INFO] 正在解密: 05 回忆的沙漏 (G_E_M_重生版).mflac
+[2026-01-25 20:36:26] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\05 回忆的沙漏 (G_E_M_重生版).mflac
+[2026-01-25 20:36:26] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\05 回忆的沙漏 (G_E_M_重生版).flac
+[2026-01-25 20:36:26] [INFO] 文件大小: 46.54 MB
+[2026-01-25 20:36:26] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:36:26] [INFO] 等待 2 秒后重试...
+[2026-01-25 20:36:28] [INFO] 正在解密: 05 回忆的沙漏 (G_E_M_重生版).mflac
+[2026-01-25 20:36:28] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\05 回忆的沙漏 (G_E_M_重生版).mflac
+[2026-01-25 20:36:28] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\05 回忆的沙漏 (G_E_M_重生版).flac
+[2026-01-25 20:36:28] [INFO] 文件大小: 46.54 MB (重试 2/3)
+[2026-01-25 20:36:28] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:36:28] [INFO] 等待 2 秒后重试...
+[2026-01-25 20:36:30] [INFO] 正在解密: 05 回忆的沙漏 (G_E_M_重生版).mflac
+[2026-01-25 20:36:30] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\05 回忆的沙漏 (G_E_M_重生版).mflac
+[2026-01-25 20:36:30] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\05 回忆的沙漏 (G_E_M_重生版).flac
+[2026-01-25 20:36:30] [INFO] 文件大小: 46.54 MB (重试 3/3)
+[2026-01-25 20:36:30] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:36:30] [INFO] 
+[2026-01-25 20:36:30] [INFO] 正在处理: 6/21 (28.6%)
+[2026-01-25 20:36:30] [INFO] ------------------------------------------------------------
+[2026-01-25 20:36:30] [INFO] 正在解密: 06 红蔷薇白玫瑰 (G_E_M_重生版).mflac
+[2026-01-25 20:36:30] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\06 红蔷薇白玫瑰 (G_E_M_重生版).mflac
+[2026-01-25 20:36:30] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\06 红蔷薇白玫瑰 (G_E_M_重生版).flac
+[2026-01-25 20:36:30] [INFO] 文件大小: 56.35 MB
+[2026-01-25 20:36:30] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:36:30] [INFO] 等待 2 秒后重试...
+[2026-01-25 20:36:32] [INFO] 正在解密: 06 红蔷薇白玫瑰 (G_E_M_重生版).mflac
+[2026-01-25 20:36:32] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\06 红蔷薇白玫瑰 (G_E_M_重生版).mflac
+[2026-01-25 20:36:32] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\06 红蔷薇白玫瑰 (G_E_M_重生版).flac
+[2026-01-25 20:36:32] [INFO] 文件大小: 56.35 MB (重试 2/3)
+[2026-01-25 20:36:32] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:36:32] [INFO] 等待 2 秒后重试...
+[2026-01-25 20:36:34] [INFO] 正在解密: 06 红蔷薇白玫瑰 (G_E_M_重生版).mflac
+[2026-01-25 20:36:34] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\06 红蔷薇白玫瑰 (G_E_M_重生版).mflac
+[2026-01-25 20:36:34] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\06 红蔷薇白玫瑰 (G_E_M_重生版).flac
+[2026-01-25 20:36:34] [INFO] 文件大小: 56.35 MB (重试 3/3)
+[2026-01-25 20:36:34] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:36:34] [INFO] 
+[2026-01-25 20:36:34] [INFO] 正在处理: 7/21 (33.3%)
+[2026-01-25 20:36:34] [INFO] ------------------------------------------------------------
+[2026-01-25 20:36:34] [INFO] 正在解密: 07 画 (G_E_M_重生版).mflac
+[2026-01-25 20:36:34] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\07 画 (G_E_M_重生版).mflac
+[2026-01-25 20:36:34] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\07 画 (G_E_M_重生版).flac
+[2026-01-25 20:36:34] [INFO] 文件大小: 33.62 MB
+[2026-01-25 20:36:34] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:36:34] [INFO] 等待 2 秒后重试...
+[2026-01-25 20:36:36] [INFO] 正在解密: 07 画 (G_E_M_重生版).mflac
+[2026-01-25 20:36:36] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\07 画 (G_E_M_重生版).mflac
+[2026-01-25 20:36:36] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\07 画 (G_E_M_重生版).flac
+[2026-01-25 20:36:36] [INFO] 文件大小: 33.62 MB (重试 2/3)
+[2026-01-25 20:36:36] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:36:36] [INFO] 等待 2 秒后重试...
+[2026-01-25 20:36:38] [INFO] 正在解密: 07 画 (G_E_M_重生版).mflac
+[2026-01-25 20:36:38] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\07 画 (G_E_M_重生版).mflac
+[2026-01-25 20:36:38] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\07 画 (G_E_M_重生版).flac
+[2026-01-25 20:36:38] [INFO] 文件大小: 33.62 MB (重试 3/3)
+[2026-01-25 20:36:38] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:36:38] [INFO] 
+[2026-01-25 20:36:38] [INFO] 正在处理: 8/21 (38.1%)
+[2026-01-25 20:36:38] [INFO] ------------------------------------------------------------
+[2026-01-25 20:36:38] [INFO] 正在解密: 08 光年之外 (G_E_M_重生版).mflac
+[2026-01-25 20:36:38] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\08 光年之外 (G_E_M_重生版).mflac
+[2026-01-25 20:36:38] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\08 光年之外 (G_E_M_重生版).flac
+[2026-01-25 20:36:38] [INFO] 文件大小: 48.05 MB
+[2026-01-25 20:36:38] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:36:38] [INFO] 等待 2 秒后重试...
+[2026-01-25 20:36:40] [INFO] 正在解密: 08 光年之外 (G_E_M_重生版).mflac
+[2026-01-25 20:36:40] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\08 光年之外 (G_E_M_重生版).mflac
+[2026-01-25 20:36:40] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\08 光年之外 (G_E_M_重生版).flac
+[2026-01-25 20:36:40] [INFO] 文件大小: 48.05 MB (重试 2/3)
+[2026-01-25 20:36:40] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:36:40] [INFO] 等待 2 秒后重试...
+[2026-01-25 20:36:42] [INFO] 正在解密: 08 光年之外 (G_E_M_重生版).mflac
+[2026-01-25 20:36:42] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\08 光年之外 (G_E_M_重生版).mflac
+[2026-01-25 20:36:42] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\08 光年之外 (G_E_M_重生版).flac
+[2026-01-25 20:36:42] [INFO] 文件大小: 48.05 MB (重试 3/3)
+[2026-01-25 20:36:42] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:36:42] [INFO] 
+[2026-01-25 20:36:42] [INFO] 正在处理: 9/21 (42.9%)
+[2026-01-25 20:36:42] [INFO] ------------------------------------------------------------
+[2026-01-25 20:36:42] [INFO] 正在解密: 09 睡公主 (G_E_M_重生版).mflac
+[2026-01-25 20:36:42] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\09 睡公主 (G_E_M_重生版).mflac
+[2026-01-25 20:36:42] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\09 睡公主 (G_E_M_重生版).flac
+[2026-01-25 20:36:42] [INFO] 文件大小: 55.72 MB
+[2026-01-25 20:36:42] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:36:42] [INFO] 等待 2 秒后重试...
+[2026-01-25 20:36:44] [INFO] 正在解密: 09 睡公主 (G_E_M_重生版).mflac
+[2026-01-25 20:36:44] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\09 睡公主 (G_E_M_重生版).mflac
+[2026-01-25 20:36:44] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\09 睡公主 (G_E_M_重生版).flac
+[2026-01-25 20:36:44] [INFO] 文件大小: 55.72 MB (重试 2/3)
+[2026-01-25 20:36:44] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:36:44] [INFO] 等待 2 秒后重试...
+[2026-01-25 20:36:46] [INFO] 正在解密: 09 睡公主 (G_E_M_重生版).mflac
+[2026-01-25 20:36:46] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\09 睡公主 (G_E_M_重生版).mflac
+[2026-01-25 20:36:46] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\09 睡公主 (G_E_M_重生版).flac
+[2026-01-25 20:36:46] [INFO] 文件大小: 55.72 MB (重试 3/3)
+[2026-01-25 20:36:46] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:36:46] [INFO] 
+[2026-01-25 20:36:46] [INFO] 正在处理: 10/21 (47.6%)
+[2026-01-25 20:36:46] [INFO] ------------------------------------------------------------
+[2026-01-25 20:36:46] [INFO] 正在解密: 10 天空没有极限 (粤).mflac
+[2026-01-25 20:36:46] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\10 天空没有极限 (粤).mflac
+[2026-01-25 20:36:46] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\10 天空没有极限 (粤).flac
+[2026-01-25 20:36:46] [INFO] 文件大小: 58.85 MB
+[2026-01-25 20:36:46] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:36:46] [INFO] 等待 2 秒后重试...
+[2026-01-25 20:36:48] [INFO] 正在解密: 10 天空没有极限 (粤).mflac
+[2026-01-25 20:36:48] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\10 天空没有极限 (粤).mflac
+[2026-01-25 20:36:48] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\10 天空没有极限 (粤).flac
+[2026-01-25 20:36:48] [INFO] 文件大小: 58.85 MB (重试 2/3)
+[2026-01-25 20:36:48] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:36:48] [INFO] 等待 2 秒后重试...
+[2026-01-25 20:36:50] [INFO] 正在解密: 10 天空没有极限 (粤).mflac
+[2026-01-25 20:36:50] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\10 天空没有极限 (粤).mflac
+[2026-01-25 20:36:50] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\10 天空没有极限 (粤).flac
+[2026-01-25 20:36:50] [INFO] 文件大小: 58.85 MB (重试 3/3)
+[2026-01-25 20:36:50] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:36:50] [INFO] 
+[2026-01-25 20:36:50] [INFO] 正在处理: 11/21 (52.4%)
+[2026-01-25 20:36:50] [INFO] ------------------------------------------------------------
+[2026-01-25 20:36:50] [INFO] 正在解密: 11 后会无期 (G_E_M_重生版).mflac
+[2026-01-25 20:36:50] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\11 后会无期 (G_E_M_重生版).mflac
+[2026-01-25 20:36:50] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\11 后会无期 (G_E_M_重生版).flac
+[2026-01-25 20:36:50] [INFO] 文件大小: 39.81 MB
+[2026-01-25 20:36:50] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:36:50] [INFO] 等待 2 秒后重试...
+[2026-01-25 20:36:52] [INFO] 正在解密: 11 后会无期 (G_E_M_重生版).mflac
+[2026-01-25 20:36:52] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\11 后会无期 (G_E_M_重生版).mflac
+[2026-01-25 20:36:52] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\11 后会无期 (G_E_M_重生版).flac
+[2026-01-25 20:36:52] [INFO] 文件大小: 39.81 MB (重试 2/3)
+[2026-01-25 20:36:52] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:36:52] [INFO] 等待 2 秒后重试...
+[2026-01-25 20:36:54] [INFO] 正在解密: 11 后会无期 (G_E_M_重生版).mflac
+[2026-01-25 20:36:54] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\11 后会无期 (G_E_M_重生版).mflac
+[2026-01-25 20:36:54] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\11 后会无期 (G_E_M_重生版).flac
+[2026-01-25 20:36:54] [INFO] 文件大小: 39.81 MB (重试 3/3)
+[2026-01-25 20:36:54] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:36:54] [INFO] 
+[2026-01-25 20:36:54] [INFO] 正在处理: 12/21 (57.1%)
+[2026-01-25 20:36:54] [INFO] ------------------------------------------------------------
+[2026-01-25 20:36:54] [INFO] 正在解密: 12 喜欢你 (G_E_M_重生版).mflac
+[2026-01-25 20:36:54] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\12 喜欢你 (G_E_M_重生版).mflac
+[2026-01-25 20:36:54] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\12 喜欢你 (G_E_M_重生版).flac
+[2026-01-25 20:36:54] [INFO] 文件大小: 51.33 MB
+[2026-01-25 20:36:54] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:36:54] [INFO] 等待 2 秒后重试...
+[2026-01-25 20:36:56] [INFO] 正在解密: 12 喜欢你 (G_E_M_重生版).mflac
+[2026-01-25 20:36:56] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\12 喜欢你 (G_E_M_重生版).mflac
+[2026-01-25 20:36:56] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\12 喜欢你 (G_E_M_重生版).flac
+[2026-01-25 20:36:56] [INFO] 文件大小: 51.33 MB (重试 2/3)
+[2026-01-25 20:36:56] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:36:56] [INFO] 等待 2 秒后重试...
+[2026-01-25 20:36:58] [INFO] 正在解密: 12 喜欢你 (G_E_M_重生版).mflac
+[2026-01-25 20:36:58] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\12 喜欢你 (G_E_M_重生版).mflac
+[2026-01-25 20:36:58] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\12 喜欢你 (G_E_M_重生版).flac
+[2026-01-25 20:36:58] [INFO] 文件大小: 51.33 MB (重试 3/3)
+[2026-01-25 20:36:58] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:36:58] [INFO] 
+[2026-01-25 20:36:58] [INFO] 正在处理: 13/21 (61.9%)
+[2026-01-25 20:36:58] [INFO] ------------------------------------------------------------
+[2026-01-25 20:36:58] [INFO] 正在解密: 01 听你说.mflac
+[2026-01-25 20:36:58] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\梁博\精气神\01 听你说.mflac
+[2026-01-25 20:36:58] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\梁博\精气神\01 听你说.flac
+[2026-01-25 20:36:58] [INFO] 文件大小: 24.90 MB
+[2026-01-25 20:36:58] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:36:58] [INFO] 等待 2 秒后重试...
+[2026-01-25 20:37:00] [INFO] 正在解密: 01 听你说.mflac
+[2026-01-25 20:37:00] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\梁博\精气神\01 听你说.mflac
+[2026-01-25 20:37:00] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\梁博\精气神\01 听你说.flac
+[2026-01-25 20:37:00] [INFO] 文件大小: 24.90 MB (重试 2/3)
+[2026-01-25 20:37:00] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:37:00] [INFO] 等待 2 秒后重试...
+[2026-01-25 20:37:02] [INFO] 正在解密: 01 听你说.mflac
+[2026-01-25 20:37:02] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\梁博\精气神\01 听你说.mflac
+[2026-01-25 20:37:02] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\梁博\精气神\01 听你说.flac
+[2026-01-25 20:37:02] [INFO] 文件大小: 24.90 MB (重试 3/3)
+[2026-01-25 20:37:02] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:37:02] [INFO] 
+[2026-01-25 20:37:02] [INFO] 正在处理: 14/21 (66.7%)
+[2026-01-25 20:37:02] [INFO] ------------------------------------------------------------
+[2026-01-25 20:37:02] [INFO] 正在解密: 02 避世离俗.mflac
+[2026-01-25 20:37:02] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\梁博\精气神\02 避世离俗.mflac
+[2026-01-25 20:37:02] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\梁博\精气神\02 避世离俗.flac
+[2026-01-25 20:37:02] [INFO] 文件大小: 37.97 MB
+[2026-01-25 20:37:02] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:37:02] [INFO] 等待 2 秒后重试...
+[2026-01-25 20:37:04] [INFO] 正在解密: 02 避世离俗.mflac
+[2026-01-25 20:37:04] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\梁博\精气神\02 避世离俗.mflac
+[2026-01-25 20:37:04] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\梁博\精气神\02 避世离俗.flac
+[2026-01-25 20:37:04] [INFO] 文件大小: 37.97 MB (重试 2/3)
+[2026-01-25 20:37:04] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:37:04] [INFO] 等待 2 秒后重试...
+[2026-01-25 20:37:06] [INFO] 正在解密: 02 避世离俗.mflac
+[2026-01-25 20:37:06] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\梁博\精气神\02 避世离俗.mflac
+[2026-01-25 20:37:06] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\梁博\精气神\02 避世离俗.flac
+[2026-01-25 20:37:06] [INFO] 文件大小: 37.97 MB (重试 3/3)
+[2026-01-25 20:37:06] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:37:06] [INFO] 
+[2026-01-25 20:37:06] [INFO] 正在处理: 15/21 (71.4%)
+[2026-01-25 20:37:06] [INFO] ------------------------------------------------------------
+[2026-01-25 20:37:06] [INFO] 正在解密: 03 苦与乐.mflac
+[2026-01-25 20:37:06] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\梁博\精气神\03 苦与乐.mflac
+[2026-01-25 20:37:06] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\梁博\精气神\03 苦与乐.flac
+[2026-01-25 20:37:06] [INFO] 文件大小: 43.63 MB
+[2026-01-25 20:37:06] [ERROR] 
+未预期的错误: [Errno 22] Invalid argument
+[2026-01-25 20:37:06] [ERROR] Traceback (most recent call last):
+  File "D:\WorkDev\qqmusic_decryptor\main_cli.py", line 274, in decrypt_file
+    result = self.script.exports_sync.decrypt(input_file, temp_file_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FountainChan\AppData\Local\Programs\Python\Python311\Lib\site-packages\frida\core.py", line 180, in method
+    return script._rpc_request(request, data, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FountainChan\AppData\Local\Programs\Python\Python311\Lib\site-packages\frida\core.py", line 86, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FountainChan\AppData\Local\Programs\Python\Python311\Lib\site-packages\frida\core.py", line 497, in _rpc_request
+    raise result.error
+frida.core.RPCException: unable to find method 'decrypt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\WorkDev\qqmusic_decryptor\main_cli.py", line 528, in main
+    success = decryptor.decrypt_all()
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\WorkDev\qqmusic_decryptor\main_cli.py", line 377, in decrypt_all
+    result = self.decrypt_file(file_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\WorkDev\qqmusic_decryptor\main_cli.py", line 309, in decrypt_file
+    self.log(f"解密异常: {e}", "ERROR")
+  File "D:\WorkDev\qqmusic_decryptor\main_cli.py", line 94, in log
+    print(log_message)
+OSError: [Errno 22] Invalid argument
+
+[2026-01-25 20:37:06] [INFO] 已断开与QQMusic的连接
+[2026-01-25 20:39:14] [INFO] 日志文件: logs/decrypt.log
+[2026-01-25 20:39:14] [INFO] ============================================================
+[2026-01-25 20:39:14] [INFO] QQ Music 批量解密工具 - CLI版本
+[2026-01-25 20:39:14] [INFO] ============================================================
+[2026-01-25 20:39:14] [INFO] 输入目录: G:\QQMusic\Download
+[2026-01-25 20:39:14] [INFO] 输出目录: G:\QQMusic\Decrypted
+[2026-01-25 20:39:14] [INFO] 保留目录结构: True
+[2026-01-25 20:39:14] [INFO] 跳过已存在: True
+[2026-01-25 20:39:14] [INFO] 最大重试次数: 3
+[2026-01-25 20:39:14] [INFO] 重试延迟: 2秒
+[2026-01-25 20:39:14] [INFO] ============================================================
+[2026-01-25 20:39:15] [INFO] 发现 2 个QQ Music进程，选择PID 62736
+[2026-01-25 20:39:15] [INFO] 成功连接到QQ音乐进程
+[2026-01-25 20:39:15] [INFO] 解密脚本加载成功
+[2026-01-25 20:39:16] [INFO] 正在扫描目录: G:\QQMusic\Download
+[2026-01-25 20:39:16] [INFO] 找到 21 个加密文件
+[2026-01-25 20:39:16] [INFO] 正在处理: 1/21 (4.8%)
+[2026-01-25 20:39:16] [INFO] ------------------------------------------------------------
+[2026-01-25 20:39:17] [INFO] 正在解密: 01 我的秘密 (G_E_M_重生版).mflac
+[2026-01-25 20:39:17] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\01 我的秘密 (G_E_M_重生版).mflac
+[2026-01-25 20:39:17] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\01 我的秘密 (G_E_M_重生版).flac
+[2026-01-25 20:39:17] [INFO] 文件大小: 52.90 MB
+[2026-01-25 20:39:17] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:39:17] [INFO] 等待 2 秒后重试...
+[2026-01-25 20:39:19] [INFO] 正在解密: 01 我的秘密 (G_E_M_重生版).mflac
+[2026-01-25 20:39:19] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\01 我的秘密 (G_E_M_重生版).mflac
+[2026-01-25 20:39:19] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\01 我的秘密 (G_E_M_重生版).flac
+[2026-01-25 20:39:19] [INFO] 文件大小: 52.90 MB (重试 2/3)
+[2026-01-25 20:39:19] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:39:19] [INFO] 等待 2 秒后重试...
+[2026-01-25 20:39:21] [INFO] 正在解密: 01 我的秘密 (G_E_M_重生版).mflac
+[2026-01-25 20:39:21] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\01 我的秘密 (G_E_M_重生版).mflac
+[2026-01-25 20:39:21] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\01 我的秘密 (G_E_M_重生版).flac
+[2026-01-25 20:39:21] [INFO] 文件大小: 52.90 MB (重试 3/3)
+[2026-01-25 20:39:21] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:39:21] [INFO] 
+[2026-01-25 20:39:21] [INFO] 正在处理: 2/21 (9.5%)
+[2026-01-25 20:39:21] [INFO] ------------------------------------------------------------
+[2026-01-25 20:39:21] [INFO] 正在解密: 02 Where Did U Go (G_E_M_重生版).mflac
+[2026-01-25 20:39:21] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\02 Where Did U Go (G_E_M_重生版).mflac
+[2026-01-25 20:39:21] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\02 Where Did U Go (G_E_M_重生版).flac
+[2026-01-25 20:39:21] [INFO] 文件大小: 52.37 MB
+[2026-01-25 20:39:21] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:39:21] [INFO] 等待 2 秒后重试...
+[2026-01-25 20:39:23] [INFO] 正在解密: 02 Where Did U Go (G_E_M_重生版).mflac
+[2026-01-25 20:39:23] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\02 Where Did U Go (G_E_M_重生版).mflac
+[2026-01-25 20:39:23] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\02 Where Did U Go (G_E_M_重生版).flac
+[2026-01-25 20:39:23] [INFO] 文件大小: 52.37 MB (重试 2/3)
+[2026-01-25 20:39:23] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:39:23] [INFO] 等待 2 秒后重试...
+[2026-01-25 20:39:25] [INFO] 正在解密: 02 Where Did U Go (G_E_M_重生版).mflac
+[2026-01-25 20:39:25] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\02 Where Did U Go (G_E_M_重生版).mflac
+[2026-01-25 20:39:25] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\02 Where Did U Go (G_E_M_重生版).flac
+[2026-01-25 20:39:25] [INFO] 文件大小: 52.37 MB (重试 3/3)
+[2026-01-25 20:39:25] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:39:25] [INFO] 
+[2026-01-25 20:39:25] [INFO] 正在处理: 3/21 (14.3%)
+[2026-01-25 20:39:25] [INFO] ------------------------------------------------------------
+[2026-01-25 20:39:25] [INFO] 正在解密: 03 A_I_N_Y_ 爱你 (G_E_M_重生版).mflac
+[2026-01-25 20:39:25] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\03 A_I_N_Y_ 爱你 (G_E_M_重生版).mflac
+[2026-01-25 20:39:25] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\03 A_I_N_Y_ 爱你 (G_E_M_重生版).flac
+[2026-01-25 20:39:25] [INFO] 文件大小: 48.11 MB
+[2026-01-25 20:39:25] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:39:25] [INFO] 等待 2 秒后重试...
+[2026-01-25 20:39:27] [INFO] 正在解密: 03 A_I_N_Y_ 爱你 (G_E_M_重生版).mflac
+[2026-01-25 20:39:27] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\03 A_I_N_Y_ 爱你 (G_E_M_重生版).mflac
+[2026-01-25 20:39:27] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\03 A_I_N_Y_ 爱你 (G_E_M_重生版).flac
+[2026-01-25 20:39:27] [INFO] 文件大小: 48.11 MB (重试 2/3)
+[2026-01-25 20:39:27] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:39:27] [INFO] 等待 2 秒后重试...
+[2026-01-25 20:39:29] [INFO] 正在解密: 03 A_I_N_Y_ 爱你 (G_E_M_重生版).mflac
+[2026-01-25 20:39:29] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\03 A_I_N_Y_ 爱你 (G_E_M_重生版).mflac
+[2026-01-25 20:39:29] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\03 A_I_N_Y_ 爱你 (G_E_M_重生版).flac
+[2026-01-25 20:39:29] [INFO] 文件大小: 48.11 MB (重试 3/3)
+[2026-01-25 20:39:29] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:39:29] [INFO] 
+[2026-01-25 20:39:29] [INFO] 正在处理: 4/21 (19.0%)
+[2026-01-25 20:39:29] [INFO] ------------------------------------------------------------
+[2026-01-25 20:39:29] [INFO] 正在解密: 04 泡沫 (G_E_M_重生版).mflac
+[2026-01-25 20:39:29] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\04 泡沫 (G_E_M_重生版).mflac
+[2026-01-25 20:39:29] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\04 泡沫 (G_E_M_重生版).flac
+[2026-01-25 20:39:29] [INFO] 文件大小: 51.86 MB
+[2026-01-25 20:39:29] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:39:29] [INFO] 等待 2 秒后重试...
+[2026-01-25 20:39:31] [INFO] 正在解密: 04 泡沫 (G_E_M_重生版).mflac
+[2026-01-25 20:39:31] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\04 泡沫 (G_E_M_重生版).mflac
+[2026-01-25 20:39:31] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\04 泡沫 (G_E_M_重生版).flac
+[2026-01-25 20:39:31] [INFO] 文件大小: 51.86 MB (重试 2/3)
+[2026-01-25 20:39:31] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:39:31] [INFO] 等待 2 秒后重试...
+[2026-01-25 20:39:33] [INFO] 正在解密: 04 泡沫 (G_E_M_重生版).mflac
+[2026-01-25 20:39:33] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\04 泡沫 (G_E_M_重生版).mflac
+[2026-01-25 20:39:33] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\04 泡沫 (G_E_M_重生版).flac
+[2026-01-25 20:39:33] [INFO] 文件大小: 51.86 MB (重试 3/3)
+[2026-01-25 20:39:33] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:39:33] [INFO] 
+[2026-01-25 20:39:33] [INFO] 正在处理: 5/21 (23.8%)
+[2026-01-25 20:39:33] [INFO] ------------------------------------------------------------
+[2026-01-25 20:39:33] [INFO] 正在解密: 05 回忆的沙漏 (G_E_M_重生版).mflac
+[2026-01-25 20:39:33] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\05 回忆的沙漏 (G_E_M_重生版).mflac
+[2026-01-25 20:39:33] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\05 回忆的沙漏 (G_E_M_重生版).flac
+[2026-01-25 20:39:33] [INFO] 文件大小: 46.54 MB
+[2026-01-25 20:39:33] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:39:33] [INFO] 等待 2 秒后重试...
+[2026-01-25 20:39:35] [INFO] 正在解密: 05 回忆的沙漏 (G_E_M_重生版).mflac
+[2026-01-25 20:39:35] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\05 回忆的沙漏 (G_E_M_重生版).mflac
+[2026-01-25 20:39:35] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\05 回忆的沙漏 (G_E_M_重生版).flac
+[2026-01-25 20:39:35] [INFO] 文件大小: 46.54 MB (重试 2/3)
+[2026-01-25 20:39:35] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:39:35] [INFO] 等待 2 秒后重试...
+[2026-01-25 20:39:37] [INFO] 正在解密: 05 回忆的沙漏 (G_E_M_重生版).mflac
+[2026-01-25 20:39:37] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\05 回忆的沙漏 (G_E_M_重生版).mflac
+[2026-01-25 20:39:37] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\05 回忆的沙漏 (G_E_M_重生版).flac
+[2026-01-25 20:39:37] [INFO] 文件大小: 46.54 MB (重试 3/3)
+[2026-01-25 20:39:37] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:39:37] [INFO] 
+[2026-01-25 20:39:37] [INFO] 正在处理: 6/21 (28.6%)
+[2026-01-25 20:39:37] [INFO] ------------------------------------------------------------
+[2026-01-25 20:39:37] [INFO] 正在解密: 06 红蔷薇白玫瑰 (G_E_M_重生版).mflac
+[2026-01-25 20:39:37] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\06 红蔷薇白玫瑰 (G_E_M_重生版).mflac
+[2026-01-25 20:39:37] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\06 红蔷薇白玫瑰 (G_E_M_重生版).flac
+[2026-01-25 20:39:37] [INFO] 文件大小: 56.35 MB
+[2026-01-25 20:39:37] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:39:37] [INFO] 等待 2 秒后重试...
+[2026-01-25 20:39:39] [INFO] 正在解密: 06 红蔷薇白玫瑰 (G_E_M_重生版).mflac
+[2026-01-25 20:39:39] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\06 红蔷薇白玫瑰 (G_E_M_重生版).mflac
+[2026-01-25 20:39:39] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\06 红蔷薇白玫瑰 (G_E_M_重生版).flac
+[2026-01-25 20:39:39] [INFO] 文件大小: 56.35 MB (重试 2/3)
+[2026-01-25 20:39:39] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:39:39] [INFO] 等待 2 秒后重试...
+[2026-01-25 20:39:41] [INFO] 正在解密: 06 红蔷薇白玫瑰 (G_E_M_重生版).mflac
+[2026-01-25 20:39:41] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\06 红蔷薇白玫瑰 (G_E_M_重生版).mflac
+[2026-01-25 20:39:41] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\06 红蔷薇白玫瑰 (G_E_M_重生版).flac
+[2026-01-25 20:39:41] [INFO] 文件大小: 56.35 MB (重试 3/3)
+[2026-01-25 20:39:41] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:39:41] [INFO] 
+[2026-01-25 20:39:41] [INFO] 正在处理: 7/21 (33.3%)
+[2026-01-25 20:39:41] [INFO] ------------------------------------------------------------
+[2026-01-25 20:39:41] [INFO] 正在解密: 07 画 (G_E_M_重生版).mflac
+[2026-01-25 20:39:41] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\07 画 (G_E_M_重生版).mflac
+[2026-01-25 20:39:41] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\07 画 (G_E_M_重生版).flac
+[2026-01-25 20:39:41] [INFO] 文件大小: 33.62 MB
+[2026-01-25 20:39:41] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:39:41] [INFO] 等待 2 秒后重试...
+[2026-01-25 20:39:43] [INFO] 正在解密: 07 画 (G_E_M_重生版).mflac
+[2026-01-25 20:39:43] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\07 画 (G_E_M_重生版).mflac
+[2026-01-25 20:39:43] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\07 画 (G_E_M_重生版).flac
+[2026-01-25 20:39:43] [INFO] 文件大小: 33.62 MB (重试 2/3)
+[2026-01-25 20:39:43] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:39:43] [INFO] 等待 2 秒后重试...
+[2026-01-25 20:39:45] [INFO] 正在解密: 07 画 (G_E_M_重生版).mflac
+[2026-01-25 20:39:45] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\07 画 (G_E_M_重生版).mflac
+[2026-01-25 20:39:45] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\07 画 (G_E_M_重生版).flac
+[2026-01-25 20:39:45] [INFO] 文件大小: 33.62 MB (重试 3/3)
+[2026-01-25 20:39:45] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:39:45] [INFO] 
+[2026-01-25 20:39:45] [INFO] 正在处理: 8/21 (38.1%)
+[2026-01-25 20:39:45] [INFO] ------------------------------------------------------------
+[2026-01-25 20:39:45] [INFO] 正在解密: 08 光年之外 (G_E_M_重生版).mflac
+[2026-01-25 20:39:45] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\08 光年之外 (G_E_M_重生版).mflac
+[2026-01-25 20:39:45] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\08 光年之外 (G_E_M_重生版).flac
+[2026-01-25 20:39:45] [INFO] 文件大小: 48.05 MB
+[2026-01-25 20:39:45] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:39:45] [INFO] 等待 2 秒后重试...
+[2026-01-25 20:39:47] [INFO] 正在解密: 08 光年之外 (G_E_M_重生版).mflac
+[2026-01-25 20:39:47] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\08 光年之外 (G_E_M_重生版).mflac
+[2026-01-25 20:39:47] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\08 光年之外 (G_E_M_重生版).flac
+[2026-01-25 20:39:47] [INFO] 文件大小: 48.05 MB (重试 2/3)
+[2026-01-25 20:39:47] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:39:47] [INFO] 等待 2 秒后重试...
+[2026-01-25 20:39:49] [INFO] 正在解密: 08 光年之外 (G_E_M_重生版).mflac
+[2026-01-25 20:39:49] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\08 光年之外 (G_E_M_重生版).mflac
+[2026-01-25 20:39:49] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\08 光年之外 (G_E_M_重生版).flac
+[2026-01-25 20:39:49] [INFO] 文件大小: 48.05 MB (重试 3/3)
+[2026-01-25 20:39:49] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:39:49] [INFO] 
+[2026-01-25 20:39:49] [INFO] 正在处理: 9/21 (42.9%)
+[2026-01-25 20:39:49] [INFO] ------------------------------------------------------------
+[2026-01-25 20:39:49] [INFO] 正在解密: 09 睡公主 (G_E_M_重生版).mflac
+[2026-01-25 20:39:49] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\09 睡公主 (G_E_M_重生版).mflac
+[2026-01-25 20:39:49] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\09 睡公主 (G_E_M_重生版).flac
+[2026-01-25 20:39:49] [INFO] 文件大小: 55.72 MB
+[2026-01-25 20:39:49] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:39:49] [INFO] 等待 2 秒后重试...
+[2026-01-25 20:39:51] [INFO] 正在解密: 09 睡公主 (G_E_M_重生版).mflac
+[2026-01-25 20:39:51] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\09 睡公主 (G_E_M_重生版).mflac
+[2026-01-25 20:39:51] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\09 睡公主 (G_E_M_重生版).flac
+[2026-01-25 20:39:51] [INFO] 文件大小: 55.72 MB (重试 2/3)
+[2026-01-25 20:39:51] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:39:51] [INFO] 等待 2 秒后重试...
+[2026-01-25 20:39:53] [INFO] 正在解密: 09 睡公主 (G_E_M_重生版).mflac
+[2026-01-25 20:39:53] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\09 睡公主 (G_E_M_重生版).mflac
+[2026-01-25 20:39:53] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\09 睡公主 (G_E_M_重生版).flac
+[2026-01-25 20:39:53] [INFO] 文件大小: 55.72 MB (重试 3/3)
+[2026-01-25 20:39:53] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:39:53] [INFO] 
+[2026-01-25 20:39:53] [INFO] 正在处理: 10/21 (47.6%)
+[2026-01-25 20:39:53] [INFO] ------------------------------------------------------------
+[2026-01-25 20:39:53] [INFO] 正在解密: 10 天空没有极限 (粤).mflac
+[2026-01-25 20:39:53] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\10 天空没有极限 (粤).mflac
+[2026-01-25 20:39:53] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\10 天空没有极限 (粤).flac
+[2026-01-25 20:39:53] [INFO] 文件大小: 58.85 MB
+[2026-01-25 20:39:53] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:39:53] [INFO] 等待 2 秒后重试...
+[2026-01-25 20:39:55] [INFO] 正在解密: 10 天空没有极限 (粤).mflac
+[2026-01-25 20:39:55] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\10 天空没有极限 (粤).mflac
+[2026-01-25 20:39:55] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\10 天空没有极限 (粤).flac
+[2026-01-25 20:39:55] [INFO] 文件大小: 58.85 MB (重试 2/3)
+[2026-01-25 20:39:55] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:39:55] [INFO] 等待 2 秒后重试...
+[2026-01-25 20:39:57] [INFO] 正在解密: 10 天空没有极限 (粤).mflac
+[2026-01-25 20:39:57] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\10 天空没有极限 (粤).mflac
+[2026-01-25 20:39:57] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\10 天空没有极限 (粤).flac
+[2026-01-25 20:39:57] [INFO] 文件大小: 58.85 MB (重试 3/3)
+[2026-01-25 20:39:57] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:39:57] [INFO] 
+[2026-01-25 20:39:57] [INFO] 正在处理: 11/21 (52.4%)
+[2026-01-25 20:39:57] [INFO] ------------------------------------------------------------
+[2026-01-25 20:39:57] [INFO] 正在解密: 11 后会无期 (G_E_M_重生版).mflac
+[2026-01-25 20:39:57] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\11 后会无期 (G_E_M_重生版).mflac
+[2026-01-25 20:39:57] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\11 后会无期 (G_E_M_重生版).flac
+[2026-01-25 20:39:57] [INFO] 文件大小: 39.81 MB
+[2026-01-25 20:39:57] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:39:57] [INFO] 等待 2 秒后重试...
+[2026-01-25 20:39:59] [INFO] 正在解密: 11 后会无期 (G_E_M_重生版).mflac
+[2026-01-25 20:39:59] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\11 后会无期 (G_E_M_重生版).mflac
+[2026-01-25 20:39:59] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\11 后会无期 (G_E_M_重生版).flac
+[2026-01-25 20:39:59] [INFO] 文件大小: 39.81 MB (重试 2/3)
+[2026-01-25 20:39:59] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:39:59] [INFO] 等待 2 秒后重试...
+[2026-01-25 20:40:01] [INFO] 正在解密: 11 后会无期 (G_E_M_重生版).mflac
+[2026-01-25 20:40:01] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\11 后会无期 (G_E_M_重生版).mflac
+[2026-01-25 20:40:01] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\11 后会无期 (G_E_M_重生版).flac
+[2026-01-25 20:40:01] [INFO] 文件大小: 39.81 MB (重试 3/3)
+[2026-01-25 20:40:01] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:40:01] [INFO] 
+[2026-01-25 20:40:01] [INFO] 正在处理: 12/21 (57.1%)
+[2026-01-25 20:40:01] [INFO] ------------------------------------------------------------
+[2026-01-25 20:40:01] [INFO] 正在解密: 12 喜欢你 (G_E_M_重生版).mflac
+[2026-01-25 20:40:01] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\12 喜欢你 (G_E_M_重生版).mflac
+[2026-01-25 20:40:01] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\12 喜欢你 (G_E_M_重生版).flac
+[2026-01-25 20:40:01] [INFO] 文件大小: 51.33 MB
+[2026-01-25 20:40:01] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:40:01] [INFO] 等待 2 秒后重试...
+[2026-01-25 20:40:03] [INFO] 正在解密: 12 喜欢你 (G_E_M_重生版).mflac
+[2026-01-25 20:40:03] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\12 喜欢你 (G_E_M_重生版).mflac
+[2026-01-25 20:40:03] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\12 喜欢你 (G_E_M_重生版).flac
+[2026-01-25 20:40:03] [INFO] 文件大小: 51.33 MB (重试 2/3)
+[2026-01-25 20:40:03] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:40:03] [INFO] 等待 2 秒后重试...
+[2026-01-25 20:40:05] [INFO] 正在解密: 12 喜欢你 (G_E_M_重生版).mflac
+[2026-01-25 20:40:05] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\12 喜欢你 (G_E_M_重生版).mflac
+[2026-01-25 20:40:05] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\G_E_M_ 邓紫棋\I AM GLORIA\12 喜欢你 (G_E_M_重生版).flac
+[2026-01-25 20:40:05] [INFO] 文件大小: 51.33 MB (重试 3/3)
+[2026-01-25 20:40:05] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:40:05] [INFO] 
+[2026-01-25 20:40:05] [INFO] 正在处理: 13/21 (61.9%)
+[2026-01-25 20:40:05] [INFO] ------------------------------------------------------------
+[2026-01-25 20:40:05] [INFO] 正在解密: 01 听你说.mflac
+[2026-01-25 20:40:05] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\梁博\精气神\01 听你说.mflac
+[2026-01-25 20:40:05] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\梁博\精气神\01 听你说.flac
+[2026-01-25 20:40:05] [INFO] 文件大小: 24.90 MB
+[2026-01-25 20:40:05] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:40:05] [INFO] 等待 2 秒后重试...
+[2026-01-25 20:40:07] [INFO] 正在解密: 01 听你说.mflac
+[2026-01-25 20:40:07] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\梁博\精气神\01 听你说.mflac
+[2026-01-25 20:40:07] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\梁博\精气神\01 听你说.flac
+[2026-01-25 20:40:07] [INFO] 文件大小: 24.90 MB (重试 2/3)
+[2026-01-25 20:40:07] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:40:07] [INFO] 等待 2 秒后重试...
+[2026-01-25 20:40:09] [INFO] 正在解密: 01 听你说.mflac
+[2026-01-25 20:40:09] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\梁博\精气神\01 听你说.mflac
+[2026-01-25 20:40:09] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\梁博\精气神\01 听你说.flac
+[2026-01-25 20:40:09] [INFO] 文件大小: 24.90 MB (重试 3/3)
+[2026-01-25 20:40:09] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:40:09] [INFO] 
+[2026-01-25 20:40:09] [INFO] 正在处理: 14/21 (66.7%)
+[2026-01-25 20:40:09] [INFO] ------------------------------------------------------------
+[2026-01-25 20:40:09] [INFO] 正在解密: 02 避世离俗.mflac
+[2026-01-25 20:40:09] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\梁博\精气神\02 避世离俗.mflac
+[2026-01-25 20:40:09] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\梁博\精气神\02 避世离俗.flac
+[2026-01-25 20:40:09] [INFO] 文件大小: 37.97 MB
+[2026-01-25 20:40:09] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:40:09] [INFO] 等待 2 秒后重试...
+[2026-01-25 20:40:11] [INFO] 正在解密: 02 避世离俗.mflac
+[2026-01-25 20:40:11] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\梁博\精气神\02 避世离俗.mflac
+[2026-01-25 20:40:11] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\梁博\精气神\02 避世离俗.flac
+[2026-01-25 20:40:11] [INFO] 文件大小: 37.97 MB (重试 2/3)
+[2026-01-25 20:40:11] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:40:11] [INFO] 等待 2 秒后重试...
+[2026-01-25 20:40:13] [INFO] 正在解密: 02 避世离俗.mflac
+[2026-01-25 20:40:13] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\梁博\精气神\02 避世离俗.mflac
+[2026-01-25 20:40:13] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\梁博\精气神\02 避世离俗.flac
+[2026-01-25 20:40:13] [INFO] 文件大小: 37.97 MB (重试 3/3)
+[2026-01-25 20:40:13] [ERROR] 解密异常: unable to find method 'decrypt'
+[2026-01-25 20:40:13] [INFO] 
+[2026-01-25 20:40:13] [INFO] 正在处理: 15/21 (71.4%)
+[2026-01-25 20:40:13] [INFO] ------------------------------------------------------------
+[2026-01-25 20:40:13] [INFO] 正在解密: 03 苦与乐.mflac
+[2026-01-25 20:40:13] [INFO] 输入: G:\QQMusic\Download\VipSongsDownload\梁博\精气神\03 苦与乐.mflac
+[2026-01-25 20:40:13] [INFO] 输出: G:\QQMusic\Decrypted\VipSongsDownload\梁博\精气神\03 苦与乐.flac
+[2026-01-25 20:40:13] [INFO] 文件大小: 43.63 MB
+[2026-01-25 20:40:13] [ERROR] 
+未预期的错误: [Errno 22] Invalid argument
+[2026-01-25 20:40:13] [ERROR] Traceback (most recent call last):
+  File "D:\WorkDev\qqmusic_decryptor\main_cli.py", line 278, in decrypt_file
+    result = self.script.exports_sync.decrypt(input_file, temp_file_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FountainChan\AppData\Local\Programs\Python\Python311\Lib\site-packages\frida\core.py", line 180, in method
+    return script._rpc_request(request, data, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FountainChan\AppData\Local\Programs\Python\Python311\Lib\site-packages\frida\core.py", line 86, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FountainChan\AppData\Local\Programs\Python\Python311\Lib\site-packages\frida\core.py", line 497, in _rpc_request
+    raise result.error
+frida.core.RPCException: unable to find method 'decrypt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\WorkDev\qqmusic_decryptor\main_cli.py", line 535, in main
+    success = decryptor.decrypt_all()
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\WorkDev\qqmusic_decryptor\main_cli.py", line 384, in decrypt_all
+    result = self.decrypt_file(file_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\WorkDev\qqmusic_decryptor\main_cli.py", line 316, in decrypt_file
+    self.log(f"解密异常: {e}", "ERROR")
+  File "D:\WorkDev\qqmusic_decryptor\main_cli.py", line 94, in log
+    print(log_message)
+OSError: [Errno 22] Invalid argument
+
+[2026-01-25 20:40:13] [INFO] 已断开与QQMusic的连接
