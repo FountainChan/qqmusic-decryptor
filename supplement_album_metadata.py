@@ -286,7 +286,7 @@ def download_cover(albummid, size="500x500"):
         return None
 
 
-def embed_metadata_to_audio(audio_file_path, pub_year, cover_data):
+def embed_metadata_to_audio(audio_file_path, pub_year, cover_data, track_number=None):
     """
     将元数据嵌入音频文件（支持 FLAC 和 OGG）
     
@@ -294,6 +294,7 @@ def embed_metadata_to_audio(audio_file_path, pub_year, cover_data):
         audio_file_path: 音频文件路径（.flac 或 .ogg）
         pub_year: 发行年份（字符串，如 "2009"）
         cover_data: 封面数据
+        track_number: 音轨号（整数，如 1, 2, 3...）
     
     Returns:
         bool: 成功返回 True，失败返回 False
@@ -312,6 +313,19 @@ def embed_metadata_to_audio(audio_file_path, pub_year, cover_data):
             if pub_year:
                 audio["DATE"] = pub_year
                 logger.info(f"添加年份 (FLAC): {pub_year}")
+            
+            # 添加音轨号（TRACKNUMBER 标签）
+            if track_number is not None:
+                # 检查是否已经有音轨号
+                existing_track = audio.get("TRACKNUMBER")
+                if existing_track:
+                    logger.info(f"FLAC 文件已经有音轨号: {existing_track}，跳过写入")
+                else:
+                    # FLAC 标准使用 TRACKNUMBER 字符串
+                    audio["TRACKNUMBER"] = str(track_number)
+                    logger.info(f"添加音轨号 (FLAC): {track_number}")
+            else:
+                logger.warning(f"未找到音轨号，跳过音轨号写入")
             
             # 添加封面（PICTURE 标签）
             if cover_data:
@@ -338,6 +352,19 @@ def embed_metadata_to_audio(audio_file_path, pub_year, cover_data):
                 # OGG Vorbis 标准使用 DATE 字符串
                 audio["DATE"] = pub_year
                 logger.info(f"添加年份 (OGG): {pub_year}")
+            
+            # 添加音轨号（TRACKNUMBER 标签）
+            if track_number is not None:
+                # 检查是否已经有音轨号
+                existing_track = audio.get("TRACKNUMBER")
+                if existing_track:
+                    logger.info(f"OGG 文件已经有音轨号: {existing_track}，跳过写入")
+                else:
+                    # OGG Vorbis 标准使用 TRACKNUMBER 字符串
+                    audio["TRACKNUMBER"] = str(track_number)
+                    logger.info(f"添加音轨号 (OGG): {track_number}")
+            else:
+                logger.warning(f"未找到音轨号，跳过音轨号写入")
             
             # 封面处理：跳过内嵌，只保存为独立文件
             # OGG Vorbis 的封面嵌入非常复杂（需要手动构建 METADATA_BLOCK_PICTURE）
@@ -519,7 +546,8 @@ def process_album_directory(album_dir, api_cache=None, options=None):
         
         # 嵌入元数据
         filename = os.path.basename(audio_file)
-        success = embed_metadata_to_audio(audio_file, pub_year, cover_data)
+        track_number = extract_track_number_from_filename(filename)
+        success = embed_metadata_to_audio(audio_file, pub_year, cover_data, track_number)
         
         if success:
             stats["success"] += 1
