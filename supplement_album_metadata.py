@@ -528,9 +528,12 @@ def process_album_directory(album_dir, api_cache=None, options=None):
             stats["failed"] += 1
             logger.warning(f"[FAIL] {filename}")
     
-    # 保存封面到目录
+    # 保存封面到音频文件所在的目录（专辑子目录）
     if cover_data:
-        save_cover_to_directory(album_dir, cover_data)
+        # 获取第一个音频文件所在的目录（专辑子目录）
+        first_audio_dir = os.path.dirname(audio_files[0])
+        cover_path = save_cover_to_directory(first_audio_dir, cover_data)
+        logger.info(f"封面已保存到: {cover_path}")
 
     return stats
 
