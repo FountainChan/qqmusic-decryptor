@@ -8,7 +8,8 @@ FLAC 元数据处理工具模块
 import re
 import os
 import logging
-from mutagen.flac import FLAC, FLACNoHeaderError
+from mutagen.flac import FLAC, FLACNoHeaderError, Picture
+from qqmusic_api_client import QQMusicAPIClient, get_album_metadata_cached
 
 # 配置日志
 logging.basicConfig(
@@ -77,9 +78,9 @@ def add_track_number_to_flac(flac_file_path, track_number, total_tracks=None):
             logger.error(f"文件不存在: {flac_file_path}")
             return False
 
-        # 检查是否是FLAC文件
-        if not flac_file_path.lower().endswith('.flac'):
-            logger.error(f"不是FLAC文件: {flac_file_path}")
+        # 检查是否是支持的文件格式（FLAC 或 OGG）
+        if not flac_file_path.lower().endswith(('.flac', '.ogg')):
+            logger.error(f"不是支持的文件格式（.flac/.ogg）: {flac_file_path}")
             return False
 
         # 加载FLAC文件
@@ -158,12 +159,12 @@ def process_flac_file_metadata(flac_file_path, total_tracks=None, verbose=False)
 def process_directory_flac_metadata(directory_path, total_tracks=None, verbose=False):
     """
     批量处理目录中所有 FLAC 文件的元数据
-
+    
     Args:
         directory_path (str): 目录路径
         total_tracks (int, optional): 专辑总音轨数
         verbose (bool): 是否输出详细日志
-
+    
     Returns:
         dict: 统计信息 {'total': int, 'success': int, 'failed': int, 'skipped': int}
     """
@@ -173,7 +174,7 @@ def process_directory_flac_metadata(directory_path, total_tracks=None, verbose=F
         'failed': 0,
         'skipped': 0
     }
-
+    
     try:
         # 遍历目录
         for root, dirs, files in os.walk(directory_path):
@@ -181,25 +182,227 @@ def process_directory_flac_metadata(directory_path, total_tracks=None, verbose=F
                 if file.lower().endswith('.flac'):
                     stats['total'] += 1
                     flac_file_path = os.path.join(root, file)
-
+                    
                     result = process_flac_file_metadata(
                         flac_file_path,
                         total_tracks,
                         verbose
                     )
-
+                    
                     if result['success']:
                         stats['success'] += 1
                     elif result['track_number'] is None:
                         stats['skipped'] += 1
                     else:
                         stats['failed'] += 1
-
+        
         return stats
-
+    
     except Exception as e:
         logger.error(f"批量处理异常: {e}")
         return stats
+
+
+def embed_cover_to_flac(flac_file_path, cover_data, metadata=None):
+    """
+    将封面嵌入到 FLAC 文件
+    
+    Args:
+        flac_file_path (str): FLAC 文件路径
+        cover_data (bytes): 封面图片数据
+        metadata (dict, optional): 其他元数据
+    
+    Returns:
+        bool: 成功返回 True，失败返回 False
+    """
+    try:
+        # 加载FLAC文件
+        audio = FLAC(flac_file_path)
+        
+        # 清除现有封面
+        audio.clear_pictures()
+        
+        # 创建新的封面
+        image = Picture()
+        image.type = 3  # 3 表示封面
+        image.mime = "image/jpeg"
+        image.data = cover_data
+        
+        # 添加封面
+        audio.add_picture(image)
+        
+        # 添加其他元数据
+        if metadata:
+            for key, value in metadata.items():
+                audio[key] = value
+        
+        # 保存
+        audio.save()
+        
+        logger.info(f"成功嵌入封面到: {os.path.basename(flac_file_path)}")
+        return True
+    
+    except Exception as e:
+        logger.error(f"嵌入封面失败 {os.path.basename(flac_file_path)}: {e}")
+        return False
+
+
+def get_flac_metadata_tags(flac_file_path):
+    """
+    获取 FLAC 文件的元数据标签
+    
+    Args:
+        flac_file_path (str): FLAC 文件路径
+    
+    Returns:
+        dict: 包含 artist, album, title 的字典
+    """
+    try:
+        audio = FLAC(flac_file_path)
+        
+        artist = audio.get("ARTIST", [None])[0]
+        album = audio.get("ALBUM", [None])[0]
+        title = audio.get("TITLE", [None])[0]
+        
+        return {
+            "artist": artist,
+            "album": album,
+            "title": title
+        }
+    
+    except Exception as e:
+        logger.error(f"获取元数据失败 {flac_file_path}: {e}")
+        return {
+            "artist": None,
+            "album": None,
+            "title": None
+        }
+
+
+def save_cover_to_directory(album_dir, cover_data):
+    """
+    保存封面图片到专辑目录
+    
+    Args:
+        album_dir (str): 专辑目录路径
+        cover_data (bytes): 封面图片数据
+    
+    Returns:
+        str: 保存的文件路径，失败返回 None
+    """
+    try:
+        # 确保目录存在
+        os.makedirs(album_dir, exist_ok=True)
+        
+        # 封面文件路径
+        cover_path = os.path.join(album_dir, "cover.jpg")
+        
+        # 检查文件是否已存在
+        if os.path.exists(cover_path):
+            logger.info(f"封面已存在: {cover_path}")
+            return cover_path
+        
+        # 保存封面
+        with open(cover_path, 'wb') as f:
+            f.write(cover_data)
+        
+        logger.info(f"封面已保存: {cover_path}")
+        return cover_path
+    
+    except Exception as e:
+        logger.error(f"保存封面失败 {album_dir}: {e}")
+        return None
+
+
+def process_album_metadata(flac_file_path, api_client=None, use_cache=True):
+    """
+    处理 FLAC 文件的专辑元数据（封面、发行年份）
+    
+    Args:
+        flac_file_path (str): FLAC 文件路径
+        api_client (QQMusicAPIClient, optional): API 客户端实例
+        use_cache (bool): 是否使用缓存
+    
+    Returns:
+        dict: 处理结果 {'success': bool, 'message': str, 'metadata': dict or None}
+    """
+    result = {
+        'success': False,
+        'message': '',
+        'metadata': None
+    }
+    
+    try:
+        # 获取FLAC文件的元数据
+        flac_tags = get_flac_metadata_tags(flac_file_path)
+        artist = flac_tags.get("artist")
+        album = flac_tags.get("album")
+        
+        # 检查必要的标签
+        if not artist or not album:
+            result['message'] = f"缺少必要的标签 (ARTIST 或 ALBUM): {os.path.basename(flac_file_path)}"
+            logger.info(result['message'])
+            return result
+        
+        # 创建API客户端
+        if api_client is None:
+            api_client = QQMusicAPIClient()
+        
+        # 获取专辑信息（带缓存）
+        album_metadata = get_album_metadata_cached(api_client, artist, album)
+        
+        if not album_metadata:
+            result['message'] = f"未找到专辑信息: {artist} - {album}"
+            logger.warning(result['message'])
+            return result
+        
+        # 提取信息
+        cover_data = album_metadata.get("cover_data")
+        pub_year = album_metadata.get("pub_year")
+        pub_date = album_metadata.get("pub_date")
+        genre = album_metadata.get("genre")
+        
+        # 构建元数据字典
+        metadata_to_add = {}
+        
+        if pub_year:
+            metadata_to_add["DATE"] = pub_year
+            logger.info(f"发行年份: {pub_year}")
+        
+        if genre:
+            metadata_to_add["GENRE"] = genre
+        
+        # 保存封面到专辑目录
+        album_dir = os.path.dirname(flac_file_path)
+        if cover_data:
+            save_cover_to_directory(album_dir, cover_data)
+        
+        # 嵌入封面和元数据到FLAC文件
+        if cover_data:
+            success = embed_cover_to_flac(flac_file_path, cover_data, metadata_to_add)
+        else:
+            # 只有元数据（发行年份）
+            success = add_track_number_to_flac(flac_file_path, 999)
+            # 清除音轨号，只添加日期等元数据
+            audio = FLAC(flac_file_path)
+            for key, value in metadata_to_add.items():
+                audio[key] = value
+            audio.save()
+            success = True
+        
+        if success:
+            result['success'] = True
+            result['message'] = f"成功处理专辑元数据"
+            result['metadata'] = album_metadata
+        else:
+            result['message'] = f"处理专辑元数据失败"
+        
+        return result
+    
+    except Exception as e:
+        result['message'] = f"处理专辑元数据异常 {os.path.basename(flac_file_path)}: {e}"
+        logger.error(result['message'])
+        return result
 
 
 # 命令行使用示例

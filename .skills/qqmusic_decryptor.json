@@ -1,0 +1,106 @@
+{
+  "name": "qqmusic_decryptor",
+  "version": "1.0.0",
+  "description": "QQ音乐加密音乐文件解密工具，用于将 .mflac/.mgg 文件转换为 .flac/.ogg 格式",
+  "author": "QQ Music Decryptor Project",
+  "triggers": [
+    "转换音乐",
+    "解密音乐",
+    "解码音乐",
+    "转换flac",
+    "转换ogg",
+    "解密mflac",
+    "解密mgg"
+  ],
+  "category": "多媒体处理",
+  "enabled": true,
+  "prerequisites": [
+    {
+      "name": "检查 Python 环境",
+      "check": "python --version",
+      "required": true,
+      "error_message": "请先安装 Python 3.8+"
+    },
+    {
+      "name": "检查 frida 安装",
+      "check": "python -c \"import frida; print('OK')\"",
+      "required": true,
+      "error_message": "请先运行 install_dependencies.bat 安装 frida"
+    },
+    {
+      "name": "检查 mutagen 安装",
+      "check": "python -c \"from mutagen import FLAC; print('OK')\"",
+      "required": true,
+      "error_message": "请先安装依赖：pip install mutagen"
+    },
+    {
+      "name": "检查 frida-server 运行状态",
+      "check": "frida-ps",
+      "required": true,
+      "error_message": "请先启动 frida-server（以管理员身份运行 start_frida_server.bat）"
+    },
+    {
+      "name": "检查 QQ Music 运行状态",
+      "check": "tasklist /FI \"IMAGENAME eq QQMusic.exe\"",
+      "required": true,
+      "error_message": "请先启动 QQ Music 客户端并登录 VIP 账号"
+    }
+  ],
+  "actions": [
+    {
+      "step": 1,
+      "name": "启动 GUI 解密工具",
+      "description": "启动图形界面版本的解密工具",
+      "command": "run_gui_simple.bat",
+      "type": "batch",
+      "working_dir": "{PROJECT_DIR}",
+      "background": true,
+      "optional": false
+    },
+    {
+      "step": 2,
+      "name": "等待 GUI 启动",
+      "description": "等待图形界面启动完成",
+      "wait": 3,
+      "unit": "seconds"
+    },
+    {
+      "step": 3,
+      "name": "确认运行状态",
+      "description": "确认解密工具已正常启动",
+      "message": "QQ音乐解密工具 GUI 已启动，请在界面中配置输入/输出目录并开始解密",
+      "type": "info"
+    }
+  ],
+  "alternative_actions": [
+    {
+      "name": "使用 CLI 命令行模式",
+      "description": "如果不使用 GUI，可以使用命令行模式",
+      "command": "auto_decrypt.bat",
+      "type": "batch",
+      "working_dir": "{PROJECT_DIR}"
+    }
+  ],
+  "configuration": {
+    "default_input_dir": "G:\\QQMusic\\Download",
+    "default_output_dir": "G:\\QQMusic\\Decrypted\\VipSongsDownload",
+    "supported_formats": {
+      "input": [".mflac", ".mgg"],
+      "output": [".flac", ".ogg"]
+    },
+    "features": [
+      "批量解密",
+      "保留目录结构",
+      "自动复制歌词文件",
+      "自动添加音轨号元数据",
+      "错误重试机制",
+      "详细日志记录"
+    ]
+  },
+  "help": {
+    "usage": "使用关键词触发：'转换音乐'、'解密音乐' 或 '解码音乐'",
+    "prerequisites": "1. 启动 frida-server（管理员权限）\n2. 启动 QQ Music 并登录 VIP\n3. 确保已安装所有依赖",
+    "troubleshooting": "如果一闪而过，请检查 frida-server 和 QQ Music 是否正在运行",
+    "docs": "查看 doc/ 目录获取详细文档"
+  }
+}

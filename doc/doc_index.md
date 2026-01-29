@@ -23,6 +23,7 @@
 |------|------|------|
 | **Agents文档** | `agents.md` | 项目完整文档，面向所有用户 |
 | **Claude文档** | `claude.md` | AI助手集成指南，面向开发者 |
+| **Shell脚本指南** | `SHELL_SCRIPTS_GUIDE.md` | Git Bash 脚本使用指南 |
 | **API文档** | `API.md` | (如需要) API接口说明 |
 
 ### 📋 问题解决
@@ -51,8 +52,10 @@
 - **了解项目** → 阅读 `README.md`
 - **快速开始** → 阅读 `QUICKSTART.md`
 - **解决问题** → 阅读 `doc/problem_solved.md`
-- **启动GUI** → 双击 `run_gui_simple.bat`
+- **启动GUI（推荐）** → 双击 `run_gui_simple.bat`
+- **启动GUI（Git Bash）** → 运行 `bash start_gui.sh`
 - **诊断问题** → 运行 `python diagnose_gui.py`
+- **检查环境** → 运行 `bash check_env.sh`
 - **检查配置** → 运行 `python check_current_paths.py`
 
 ---
@@ -91,7 +94,8 @@ python diagnose_gui.py
 ```
 D:\WorkDev\qqmusic_decryptor\
 ├── doc/                           # 📂 文档目录
-│   └── problem_solved.md          # 📝 问题解决记录
+│   ├── problem_solved.md          # 📝 问题解决记录
+│   └── SHELL_SCRIPTS_GUIDE.md   # 📝 Shell脚本使用指南
 │
 ├── gui_backup/                     # 📂 GUI备份版本
 │   ├── main_gui.py                # GUI主程序（已修复）
@@ -107,11 +111,17 @@ D:\WorkDev\qqmusic_decryptor\
 │   ├── config.ini                 # 配置文件
 │   └── requirements.txt           # Python依赖
 │
-├── 启动脚本
+├── 启动脚本（.bat）
 │   ├── run_gui_simple.bat         # ⭐ 推荐启动方式
 │   ├── launch_gui.bat             # 标准启动方式
 │   ├── start_frida_server.bat     # Frida服务启动
 │   └── auto_decrypt.bat           # 自动解密脚本
+│
+├── 启动脚本（.sh）
+│   ├── start_gui.sh              # GUI启动（Git Bash）
+│   ├── start_frida_server.sh      # Frida服务启动（Git Bash）
+│   ├── auto_decrypt.sh            # 自动解密（Git Bash）
+│   └── check_env.sh              # 环境检查（Git Bash）
 │
 ├── 测试脚本
 │   ├── test_gui_config.py         # 配置验证
@@ -191,6 +201,19 @@ D:\WorkDev\qqmusic_decryptor\
 
 ## 🔍 文档更新记录
 
+### v1.2 (2026-01-29)
+
+**新增**:
+- ✅ `doc/SHELL_SCRIPTS_GUIDE.md` - Shell脚本使用指南
+- ✅ `start_gui.sh` - GUI启动脚本（Git Bash）
+- ✅ `start_frida_server.sh` - Frida服务启动（Git Bash）
+- ✅ `auto_decrypt.sh` - 自动解密脚本（Git Bash）
+- ✅ `check_env.sh` - 环境检查脚本（Git Bash）
+
+**更新**:
+- ✅ 更新 `AGENTS.md` - 添加命令行工具使用规则
+- ✅ 更新 `doc_index.md` - 添加Shell脚本相关内容
+
 ### v1.1 (2026-01-26)
 
 **新增**:
@@ -249,27 +272,47 @@ D:\WorkDev\qqmusic_decryptor\
 
 ## 📊 快速命令参考
 
-```bash
+### Windows Batch
+```batch
 # 启动GUI
-pythonw gui_backup/main_gui.py
+run_gui_simple.bat
 
 # 诊断环境
-python diagnose_gui.py
+diagnose_gui.py
 
 # 检查配置
-python check_current_paths.py
+check_current_paths.py
 
 # 测试配置
-python test_gui_config.py
+test_gui_config.py
 
 # 测试功能
-python test_gui_functions.py
+test_gui_functions.py
 
 # CLI版本
 python main_cli.py
 
 # 自动解密
 auto_decrypt.bat
+```
+
+### Git Bash（推荐）
+```bash
+# 启动GUI
+cd /d/WorkDev/qqmusic_decryptor
+bash start_gui.sh
+
+# 检查环境
+bash check_env.sh
+
+# 启动frida-server
+bash start_frida_server.sh
+
+# 自动解密
+bash auto_decrypt.sh
+
+# CLI版本
+python main_cli.py
 ```
 
 ---

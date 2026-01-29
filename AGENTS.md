@@ -22,11 +22,58 @@
 - **文档语言**：项目相关文档和说明应使用中文编写
 - **代码注释**：代码注释应使用中文，便于理解和维护
 
+### 命令行工具使用规则
+
+- **优先使用 Git Bash**：当需要执行命令行操作时，首先尝试使用 Git Bash 运行
+- **避免 PowerShell 和 CMD**：尽量少用 PowerShell、cmd.exe 等 Windows 原生工具
+- **支持 Shell 脚本**：可以使用 Git Bash 执行 .sh 脚本文件
+- **路径格式**：在 Git Bash 中使用 Unix 风格路径（正斜杠 `/`），如 `/d/WorkDev/qqmusic_decryptor`
+- **命令兼容性**：确保命令在 Git Bash（基于 MSYS2/MinGW）环境下可正常运行
+
 ---
 
 ## 开发经验与最佳实践
 
-### 1. 批处理文件编码和编写规范
+### 1. 命令行工具使用规则（新增）
+
+**规则**：优先使用 Git Bash 执行命令行操作
+
+**原因**：
+- Git Bash 提供更好的 Unix 兼容性
+- 支持更强大的 Shell 脚本（.sh）
+- 避免Windows CMD/PowerShell 的路径和编码问题
+- 更适合跨平台开发
+
+**最佳实践**：
+- **优先使用 Git Bash**：执行命令行操作时首先尝试 Git Bash
+- **避免 Windows 原生工具**：尽量少用 PowerShell、cmd.exe
+- **支持 Shell 脚本**：可以使用 .sh 脚本替代 .bat 文件
+- **路径格式**：在 Git Bash 中使用 Unix 风格路径（正斜杠 `/`）
+- **脚本执行**：使用 `bash script.sh` 执行 Shell 脚本
+
+**示例**：
+```bash
+# 使用 Git Bash 运行命令
+cd /d/WorkDev/qqmusic_decryptor
+bash start_gui.sh
+
+# 使用 .sh 脚本替代 .bat
+bash check_env.sh
+bash auto_decrypt.sh
+
+# Unix 风格路径
+python main_cli.py --input "/d/Download" --output "/d/Output"
+```
+
+**项目中的 Shell 脚本**：
+- `start_gui.sh` - 启动 GUI 解密工具
+- `start_frida_server.sh` - 启动 frida-server
+- `auto_decrypt.sh` - 自动批量解密
+- `check_env.sh` - 环境检查脚本
+
+---
+
+### 2. 批处理文件编码和编写规范
 
 **规则**：批处理文件必须使用纯ASCII编码和CRLF换行符，避免中文字符
 
@@ -153,6 +200,204 @@ temp_file_name = hashlib.sha256(encrypted_file.encode()).hexdigest()
 ---
 
 ### 5. GUI启动脚本编写规范
+
+**规则**：GUI启动脚本必须包含错误处理和暂停机制
+
+**原因**：脚本一闪而过时无法看到错误信息，难以诊断问题
+
+**最佳实践**：
+- 在脚本末尾添加 `pause` 命令，等待用户输入后再关闭
+- 使用 `@echo off` 隐藏命令，但保留关键输出信息
+- 添加错误处理，使用 `%ERRORLEVEL%` 检查执行状态
+- 提供清晰的错误提示和解决方案
+- **重要**：不要使用 `pause >nul`（会隐藏 pause 提示，但不会等待输入）
+- **重要**：在关键步骤后添加调试信息，跟踪执行流程
+- **重要**：确保所有错误路径都有对应的错误提示
+
+**示例**：
+```batch
+@echo off
+chcp 65001 >nul
+
+REM 显示执行信息
+echo 开始处理...
+
+REM 执行 Python 脚本
+python script.py
+
+REM 检查执行结果
+if %ERRORLEVEL% NEQ 0 (
+    echo.
+    echo [ERROR] 处理失败！错误代码: %ERRORLEVEL%
+    echo 请检查错误日志
+    pause
+    exit /b 1
+) else (
+    echo.
+    echo [SUCCESS] 处理完成
+    echo.
+    pause
+)
+```
+
+---
+
+### 5.1. 补充脚本启动规范（专辑元数据补充工具）
+
+**规则**：专辑元数据补充脚本必须避免一闪而过
+
+**原因**：`run_supplement.bat` 脚本在运行时一闪而过，用户看不到任何输出或错误信息
+
+**最佳实践**：
+- **不要使用 `pause >nul`**：这会隐藏 pause 提示，但不会等待用户按键
+  - 错误：`pause >nul` 会让脚本立即退出
+  - 正确：`pause` 或 `pause >con`
+
+- **添加详细的执行日志**：在每个关键步骤后添加调试信息
+  - `echo 执行命令: python script.py`
+  - `echo Python 执行完成，错误代码: %errorlevel%`
+  - 这样即使出错，也能看到脚本在哪里停下的
+
+- **确保所有错误路径都有错误提示**：
+  - Python 未找到
+  - 目录不存在
+  - 路径是文件
+  - Python 执行失败
+
+- **确保成功路径也有确认提示**：
+  - 显示 "处理完成！"
+  - 显示已添加的内容（封面、年份）
+  - 显示统计信息
+
+**示例**：
+```batch
+@echo off
+chcp 65001 >nul
+setlocal
+
+set SCRIPT_DIR=%~dp0
+set DEFAULT_INPUT_DIR=G:\QQMusic\Decrypted
+
+REM 显示欢迎信息
+echo ============================================================
+echo   专辑元数据补充工具
+echo ============================================================
+
+REM 检查 Python
+where python >nul 2>&1
+if %errorlevel% neq 0 (
+    echo.
+    echo   错误：未找到 Python
+    echo   请确保 Python 已安装并添加到 PATH 环境变量中
+    echo.
+    pause
+    exit /b 1
+)
+
+REM 检查目录
+if not exist "%DEFAULT_INPUT_DIR%" (
+    echo.
+    echo   错误：默认目录不存在
+    echo.
+    pause
+    exit /b 1
+)
+
+echo.
+echo 开始处理...
+echo.
+echo 执行命令: python "%SCRIPT_DIR%supplement_album_metadata.py" "%DEFAULT_INPUT_DIR%"
+echo.
+
+python "%SCRIPT_DIR%supplement_album_metadata.py" "%DEFAULT_INPUT_DIR%"
+
+echo.
+echo Python 执行完成，错误代码: %errorlevel%
+echo.
+
+if %errorlevel% neq 0 (
+    echo.
+    echo ============================================================
+    echo   处理失败，错误代码: %errorlevel%
+    echo ============================================================
+    echo.
+    echo 请检查上面的错误信息
+    echo.
+) else (
+    echo.
+    echo ============================================================
+    echo   处理完成！
+    echo ============================================================
+    echo.
+    echo 已为 FLAC 文件添加：
+    echo   - 专辑封面（嵌入文件）
+    echo   - 封面文件（保存为 cover.jpg）
+    echo   - 发行年份（写入 DATE 字段）
+    echo.
+)
+
+echo.
+echo 等待用户确认...
+echo.
+pause
+```
+
+**错误示例（一闪而过）**：
+```batch
+REM 错误示例：使用 pause >nul
+echo 开始处理...
+echo.
+python script.py
+echo.
+pause >nul  # ❌ 这会让脚本立即退出，用户看不到任何输出！
+```
+
+**正确示例（等待输入）**：
+```batch
+REM 正确示例：使用 pause
+echo 开始处理...
+echo.
+python script.py
+echo.
+pause  # ✅ 这会等待用户按键后才退出
+```
+
+**调试信息示例**：
+```batch
+echo 步骤 1：检查 Python
+where python >nul 2>&1
+if %errorlevel% neq 0 (
+    echo   结果: Python 未找到
+    pause
+    exit /b 1
+)
+
+echo 步骤 2：执行 Python 脚本
+python script.py
+
+echo 步骤 3：检查执行结果
+if %errorlevel% neq 0 (
+    echo   结果: 失败（错误代码: %errorlevel%）
+    pause
+    exit /b 1
+)
+
+echo 步骤 4：处理完成
+pause
+```
+
+**关键检查清单**：
+- [ ] 脚本是否等待用户输入？（使用 `pause` 而不是 `pause >nul`）
+- [ ] 是否显示欢迎信息？
+- [ ] 是否显示执行进度？
+- [ ] 是否显示错误代码？
+- [ ] 所有错误路径都有错误提示？
+- [ ] 是否提供了解决方案？
+- [ ] 是否显示成功完成信息？
+
+---
+
+### 6. 测试和验证流程
 
 **规则**：GUI启动脚本必须包含错误处理和暂停机制
 
@@ -634,14 +879,16 @@ pip install -r requirements.txt
 
 ## 故障排除脚本
 
-项目中包含多个修复脚本，用于解决常见问题：
+项目中包含多个测试和诊断脚本，用于环境检查和问题诊断：
 
 - check_status.py：检查GUI文件状态
 - diagnose_frida.py：诊断Frida连接问题
 - test_frida.py：测试Frida连接
-- fix_paths.bat：修复路径配置
-- fix_gui.py：修复GUI相关的问题
-- 多个apply_fix脚本：应用各种修复补丁
+- diagnose_gui.py：环境诊断脚本
+- check_current_paths.py：路径检查脚本
+- test_gui_config.py：配置验证脚本
+- test_gui_functions.py：功能测试脚本
+- start_gui_directly.py：直接启动测试
 
 ---
 

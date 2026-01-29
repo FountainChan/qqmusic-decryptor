@@ -16,7 +16,12 @@ from datetime import datetime
 import shutil
 from pathlib import Path
 import configparser
-from metadata_utils import extract_track_number_from_filename, add_track_number_to_flac
+from metadata_utils import (
+    extract_track_number_from_filename,
+    add_track_number_to_flac,
+    process_album_metadata,
+    QQMusicAPIClient
+)
 
 
 class QQMusicDecryptorCLI:
@@ -343,15 +348,17 @@ class QQMusicDecryptorCLI:
 
     def add_flac_metadata(self, flac_file_path):
         """
-        为 FLAC 文件添加元数据（从文件名提取音轨号）
-
+        为 FLAC 文件添加元数据（音轨号、封面、发行年份）
+        
         Args:
             flac_file_path (str): FLAC 文件路径
         """
         try:
             filename = os.path.basename(flac_file_path)
+            
+            # 步骤1：添加音轨号
             track_number = extract_track_number_from_filename(filename)
-
+            
             if track_number is not None:
                 success = add_track_number_to_flac(flac_file_path, track_number)
                 if success:
@@ -359,14 +366,28 @@ class QQMusicDecryptorCLI:
                 else:
                     self.log(f"✗ 添加音轨号失败", "WARNING")
             else:
-                self.log(f"未找到音轨号，跳过元数据添加", "DEBUG")
-
+                self.log(f"未找到音轨号，跳过音轨号添加", "DEBUG")
+            
+            # 步骤2：处理专辑元数据（封面、发行年份）
+            self.log(f"获取专辑信息...", "INFO")
+            api_client = QQMusicAPIClient()
+            result = process_album_metadata(flac_file_path, api_client, use_cache=True)
+            
+            if result['success']:
+                metadata = result.get('metadata', {})
+                if metadata:
+                    pub_year = metadata.get('pub_year')
+                    if pub_year:
+                        self.log(f"✓ 已添加发行年份 {pub_year}", "INFO")
+                    
+                    if metadata.get('cover_data'):
+                        self.log(f"✓ 已嵌入封面到文件", "INFO")
+                        self.log(f"✓ 已保存封面到 cover.jpg", "INFO")
+            else:
+                self.log(f"未找到专辑信息: {result['message']}", "WARNING")
+        
         except Exception as e:
             self.log(f"添加元数据异常: {e}", "WARNING")
-            
-            return True
-        except Exception as e:
-            self.log(f"验证FLAC文件异常: {e}", "WARNING")
             return False
     
     def decrypt_file(self, input_file, retry_count=0):
