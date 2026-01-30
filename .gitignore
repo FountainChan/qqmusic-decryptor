@@ -1,3 +1,11 @@
 nul
 gui_backup
 __pycache__/
+*.bak
+*.backup
+drops/
+logs/
+*.pyc
+*.pyo
+*.log
+*.exe.xz
