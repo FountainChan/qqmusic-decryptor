@@ -1,5 +1,4 @@
 nul
-gui_backup
 __pycache__/
 *.bak
 *.backup
