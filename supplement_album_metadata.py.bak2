@@ -791,8 +791,27 @@ if __name__ == '__main__':
     file_stats = combined_stats["file_stats"]
     operation_stats = combined_stats["operation_stats"]
 
-    # 统计信息只记录到日志文件，不打印到控制台
-
+    # 打印统计信息
+    print()
+    print('='*50)
+    print('处理完成')
+    print('='*50)
+    print()
+    print(f'总文件数: {file_stats["total"]}')
+    print(f'成功处理: {file_stats["processed"]}')
+    print(f'无需修改: {file_stats["unchanged"]}')
+    print(f'处理失败: {file_stats["failed"]}')
+    print()
+    print('-'*50)
+    print('操作级别统计:')
+    print('-'*50)
+    print(f'年份和封面: 成功 {operation_stats["year_cover"]["success"]}, '
+          f'跳过 {operation_stats["year_cover"]["skipped"]}, '
+          f'失败 {operation_stats["year_cover"]["failed"]}')
+    print(f'封面保存: 保存 {operation_stats["cover_saved"]["saved"]}, '
+          f'失败 {operation_stats["cover_saved"]["failed"]}')
+    print('='*50)
+    print()
 
     logger.info('='*50)
     logger.info('处理完成')
