@@ -25,9 +25,17 @@ class QQMusicDecryptorGUI:
         self.root.resizable(True, True)
         
         # 新增：配置日志（使用 logging.basicConfig）
-        # 获取脚本所在目录
+        # 获取项目根目录（不是 gui_backup/ 目录）
+        # 方法1：从脚本目录向上两级（如果文件在gui_backup/下）
         script_dir = os.path.dirname(os.path.abspath(__file__))
-        log_dir = os.path.join(script_dir, 'logs')
+        if script_dir.endswith('gui_backup'):
+            # 如果脚本在gui_backup/下，使用其父目录
+            project_root = os.path.dirname(script_dir)
+        else:
+            # 否则，使用脚本目录
+            project_root = script_dir
+        
+        log_dir = os.path.join(project_root, 'logs')
         os.makedirs(log_dir, exist_ok=True)
         log_file = os.path.join(log_dir, 'gui.log')
         
@@ -45,6 +53,15 @@ class QQMusicDecryptorGUI:
             maxBytes=10*1024*1024,  # 10MB
             backupCount=5,
             encoding='utf-8'
+        )
+        file_handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
+        
+        # 配置根 logger
+        logging.basicConfig(
+            level=logging.INFO,
+            handlers=[console_handler, file_handler],
+            format='%(asctime)s - %(levelname)s - %(message)s',
+            force=True
         )
         file_handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
         
