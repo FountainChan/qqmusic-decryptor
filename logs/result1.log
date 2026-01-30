@@ -1,0 +1,62 @@
+$ ./run_supplement.sh "/g/QQMusic/Decrypted/VipSongsDownload/Babyface/Return Of The Tender Lover"
+============================================================
+   专辑元数据补充工具
+============================================================
+
+本工具将为 FLAC 文件添加：
+   1. 专辑封面（嵌入文件 + 保存为 cover.jpg）
+   2. 发行年份（从 API 获取并写入 DATE 字段）
+
+使用方法：
+   1. Git Bash 中双击：使用默认目录
+   2. 拖动目录到脚本上：处理拖动的目录
+   3. 修改脚本中的 DEFAULT_INPUT_DIR 变量
+
+============================================================
+
+处理拖动的目录: /g/QQMusic/Decrypted/VipSongsDownload/Babyface/Return Of The Tender Lover
+
+开始处理...
+
+处理专辑目录: G:/QQMusic/Decrypted/VipSongsDownload/Babyface/Return Of The Tender Lover
+2026-01-30 12:53:12,445 - INFO - 找到 1 个 FLAC 文件
+2026-01-30 12:53:12,446 - INFO - 专辑信息: Babyface - Return Of The Tender Lover
+2026-01-30 12:53:12,446 - INFO - 查询 API 获取专辑信息...
+2026-01-30 12:53:12,891 - INFO - 找到 aDate: 2015-12-04
+2026-01-30 12:53:12,925 - INFO - 下载封面: https://y.gtimg.cn/music/photo_new/T002R500x500M000001bWLfF0W5EHU.jpg?max_age=2592000
+2026-01-30 12:53:13,367 - INFO - 封面数据大小: 78879 bytes
+2026-01-30 12:53:13,395 - INFO - 下载封面: https://y.gtimg.cn/music/photo_new/T002R500x500M000001bWLfF0W5EHU.jpg?max_age=2592000
+2026-01-30 12:53:13,473 - INFO - 封面数据大小: 78879 bytes
+2026-01-30 12:53:13,475 - INFO - 专辑信息已缓存
+2026-01-30 12:53:13,475 - INFO - [INFO] 处理文件 1/1: 09 Our Love_hires.flac
+2026-01-30 12:53:13,476 - INFO - FLAC 文件已经有音轨号: ['9']，跳过写入
+2026-01-30 12:53:13,476 - INFO - [OK] 音轨号: 9
+2026-01-30 12:53:13,477 - INFO - 添加年份 (FLAC): 2015
+2026-01-30 12:53:13,477 - INFO - 嵌入封面 (FLAC)
+2026-01-30 12:53:13,478 - INFO - 保存元数据 (FLAC): 09 Our Love_hires.flac
+2026-01-30 12:53:13,478 - INFO - [OK] 09 Our Love_hires.flac
+2026-01-30 12:53:13,479 - INFO - 保存封面: G:/QQMusic/Decrypted/VipSongsDownload/Babyface/Return Of The Tender Lover\cover.jpg
+2026-01-30 12:53:13,479 - INFO - 封面已保存到: G:/QQMusic/Decrypted/VipSongsDownload/Babyface/Return Of The Tender Lover\cover.jpg
+
+==================================================
+处理完成
+==================================================
+
+总文件数: 1
+成功: 2
+失败: 0
+跳过: 0
+==================================================
+
+
+============================================================
+   处理完成！
+============================================================
+
+已为 FLAC 文件添加：
+   - 专辑封面（嵌入文件）
+   - 封面文件（保存为 cover.jpg）
+   - 发行年份（写入 DATE 字段）
+
+按任意键退出...
+
