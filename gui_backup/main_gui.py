@@ -39,13 +39,9 @@ class QQMusicDecryptorGUI:
         os.makedirs(log_dir, exist_ok=True)
         log_file = os.path.join(log_dir, 'gui.log')
         
-        # 配置日志（同时输出到控制台和文件）
+        # 配置日志（输出到文件）
         import logging
         from logging.handlers import RotatingFileHandler
-        
-        # 创建控制台处理器
-        console_handler = logging.StreamHandler(sys.stdout)
-        console_handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
         
         # 创建文件处理器（带轮转）
         file_handler = RotatingFileHandler(
@@ -55,20 +51,11 @@ class QQMusicDecryptorGUI:
             encoding='utf-8'
         )
         file_handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
-        
-        # 配置根 logger
+
+        # 配置根 logger（只输出到文件）
         logging.basicConfig(
             level=logging.INFO,
-            handlers=[console_handler, file_handler],
-            format='%(asctime)s - %(levelname)s - %(message)s',
-            force=True
-        )
-        file_handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
-        
-        # 配置根 logger
-        logging.basicConfig(
-            level=logging.INFO,
-            handlers=[console_handler, file_handler],
+            handlers=[file_handler],
             format='%(asctime)s - %(levelname)s - %(message)s',
             force=True
         )
@@ -205,10 +192,26 @@ class QQMusicDecryptorGUI:
         # 设置默认路径（从配置文件读取）
         self.input_path.set(self.default_input_dir)
         self.output_path.set(self.default_output_dir)
+        
+        # 添加 TextHandler 到 logger（输出到 GUI 文本框）
+        # 这样日志就会同时输出到：文件、GUI 文本框
+        class TextHandler(logging.Handler):
+            def __init__(self, text_widget):
+                super().__init__()
+                self.text_widget = text_widget
+            
+            def emit(self, record):
+                msg = self.format(record)
+                self.text_widget.insert(tk.END, msg + '\n')
+                self.text_widget.see(tk.END)
+        
+        self.text_handler = TextHandler(self.log_area)
+        self.text_handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
+        logging.getLogger().addHandler(self.text_handler)
     
     # setup_logging() 方法已被 logging.basicConfig() 替代
     # 日志配置现在在 __init__() 方法中完成
-    # 同时输出到控制台、文件和 GUI 文本框
+    # 同时输出到文件和 GUI 文本框
     
     # 原来的 setup_logging() 方法（已废弃）
     # def setup_logging(self):

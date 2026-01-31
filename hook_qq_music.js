@@ -54,10 +54,11 @@ rpc.exports = {
       var fileSize = EncAndDesMediaFileGetSize(EncAndDesMediaFileObject);
       console.log("[STEP 5] File size: " + fileSize);
       
-      if (fileSize == 0 || fileSize > 100 * 1024 * 1024) {
-        console.log("[ERROR] Invalid file size: " + fileSize);
+      if (fileSize == 0 || fileSize > 2 * 1024 * 1024 * 1024) {
+        var sizeInMB = (fileSize / (1024 * 1024)).toFixed(2);
+        console.log("[ERROR] Invalid file size: " + srcFileName + " (" + sizeInMB + " MB)");
         EncAndDesMediaFileDestructor(EncAndDesMediaFileObject);
-        return "Invalid file size: " + fileSize;
+        return "Invalid file size: " + sizeInMB + " MB";
       }
       
       // Create output file
