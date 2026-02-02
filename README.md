@@ -39,9 +39,30 @@
 
 ### 日常使用（1分钟）
 
+**Windows批处理（.bat）**：
 1. 确保frida-server和QQ Music正在运行
 2. 运行 `auto_decrypt.bat`
 3. 等待转换完成
+
+**Git Bash Shell脚本（.sh）**：
+```bash
+# 1. 确保 frida-server 和 QQ Music 正在运行
+# 2. 选择解密方式：
+
+# CLI命令行模式（自动批量解密）
+bash auto_decrypt.sh
+
+# GUI图形界面模式（后台运行，无控制台）
+bash start_gui.sh
+
+# GUI图形界面模式（前台运行，显示控制台日志）
+bash run_gui_simple.sh
+```
+
+**Shell脚本说明**：
+- `auto_decrypt.sh` - CLI命令行自动解密，使用配置文件中的路径
+- `start_gui.sh` - GUI后台启动，使用`pythonw`，无控制台窗口，适合日常使用
+- `run_gui_simple.sh` - GUI前台启动，使用`python`，显示控制台日志，适合调试
 
 ## 📂 项目结构
 
@@ -136,6 +157,65 @@ python main_cli.py --config "my_config.ini"
 # 组合使用
 python main_cli.py -i "D:\input" -o "D:\output" -v -r 5
 ```
+
+## 📝 元数据处理模式
+
+程序支持两种元数据处理模式，通过 `config.ini` 中的 `metadata_processing_mode` 选项配置：
+
+### 批量模式（推荐）
+**特点**：
+- 在所有文件解密完成后统一处理元数据
+- 效率高，同一专辑只调用一次 API
+- 节省网络带宽和服务器压力
+- 时间节省 90%（单专辑 10 首歌曲：从 50 秒降至 5 秒）
+- 默认模式
+
+**配置**：
+```ini
+[OPTIONS]
+metadata_processing_mode = batch
+skip_metadata_during_decrypt = true
+```
+
+### 逐个模式（旧方式）
+**特点**：
+- 每个文件解密完成后立即处理元数据
+- 效率较低，每个文件都会调用一次 API
+- 适合需要立即验证元数据的场景
+- 需要在 config.ini 中配置
+
+**配置**：
+```ini
+[OPTIONS]
+metadata_processing_mode = inline
+skip_metadata_during_decrypt = false
+```
+
+### 手动补充元数据
+
+如果您选择批量模式，或者需要为已解密的文件补充元数据，可以运行：
+
+```bash
+# 使用 Shell 脚本（推荐）
+bash run_supplement.sh
+
+# 或手动运行 Python 脚本
+python supplement_album_metadata.py /path/to/decrypted/files
+
+# 带详细输出
+python supplement_album_metadata.py /path/to/decrypted/files --verbose
+
+# 试运行（不实际修改文件）
+python supplement_album_metadata.py /path/to/decrypted/files --dry-run
+```
+
+### 元数据处理内容
+
+批量元数据补充工具将为所有 FLAC/OGG 文件添加：
+
+1. **音轨号** - 从文件名提取并写入 TRACKNUMBER 字段
+2. **专辑封面** - 从 API 获取并嵌入到文件，同时保存为 `cover.jpg`
+3. **发行年份** - 从 API 获取并写入 DATE 字段
 
 ## 📊 输出示例
 

@@ -67,9 +67,45 @@ python main_cli.py --input "/d/Download" --output "/d/Output"
 
 **项目中的 Shell 脚本**：
 - `start_gui.sh` - 启动 GUI 解密工具
+- `run_gui_simple.sh` - 启动 GUI（调试模式，显示控制台）
 - `start_frida_server.sh` - 启动 frida-server
 - `auto_decrypt.sh` - 自动批量解密
 - `check_env.sh` - 环境检查脚本
+
+**Shell脚本详细用法**：
+
+```bash
+# 1. auto_decrypt.sh - CLI命令行自动解密
+# 用途：批量解密所有加密文件，使用config.ini中的配置
+# 启动方式：bash auto_decrypt.sh
+# 适用场景：日常批量解密，自动化处理
+# 特点：无交互，自动完成所有任务
+
+# 2. start_gui.sh - GUI图形界面（后台运行）
+# 用途：启动GUI工具，不显示控制台窗口
+# 启动方式：bash start_gui.sh
+# 使用pythonw启动，GUI在后台运行
+# 适用场景：日常使用，需要可视化操作
+# 特点：
+#   - 使用pythonw启动（无控制台窗口）
+#   - 更详细的环境检查和提示
+#   - 适合日常使用
+
+# 3. run_gui_simple.sh - GUI图形界面（前台运行）
+# 用途：启动GUI工具，显示控制台窗口和日志
+# 启动方式：bash run_gui_simple.sh
+# 使用python启动，控制台可见
+# 适用场景：调试、查看详细日志
+# 特点：
+#   - 使用python启动（显示控制台窗口）
+#   - 前台运行，有错误处理和等待
+#   - 适合调试和查看输出日志
+```
+
+**推荐使用方式**：
+- 日常批量解密：`bash auto_decrypt.sh`
+- 日常GUI操作：`bash start_gui.sh`
+- 调试/查看日志：`bash run_gui_simple.sh`
 
 ---
 

@@ -39,6 +39,10 @@ class QQMusicDecryptorCLI:
         self.skip_existing = True
         self.verify_metadata = True
 
+        # 从配置读取元数据处理模式
+        self.metadata_processing_mode = self.config.get('OPTIONS', 'metadata_processing_mode', fallback='batch')
+        self.skip_metadata_during_decrypt = self.config.getboolean('OPTIONS', 'skip_metadata_during_decrypt', fallback=True)
+
         # 新增：删除选项
         self.delete_source = True
         self.delete_empty_dirs = True
@@ -87,7 +91,9 @@ class QQMusicDecryptorCLI:
             'verify_metadata': 'true',
             'delete_source': 'true',
             'delete_empty_dirs': 'true',
-            'delete_lyrics': 'true'
+            'delete_lyrics': 'true',
+            'metadata_processing_mode': 'batch',
+            'skip_metadata_during_decrypt': 'true'
         }
         config['NOTIFICATIONS'] = {
             'show_completion': 'true',
@@ -389,7 +395,55 @@ class QQMusicDecryptorCLI:
         except Exception as e:
             self.log(f"添加元数据异常: {e}", "WARNING")
             return False
-    
+
+    def run_supplement_metadata(self):
+        """
+        运行元数据补充脚本
+
+        处理整个输出目录，批量添加音轨号、封面、年份
+        """
+        import subprocess
+
+        try:
+            # 检查 supplement_album_metadata.py 是否存在
+            script_path = os.path.join(os.path.dirname(__file__), 'supplement_album_metadata.py')
+
+            if not os.path.exists(script_path):
+                self.log(f"元数据脚本不存在: {script_path}", "WARNING")
+                return
+
+            # 构建命令
+            cmd = ['python', script_path, self.output_dir]
+
+            self.log(f"执行命令: {' '.join(cmd)}", "INFO")
+
+            # 运行脚本
+            result = subprocess.run(
+                cmd,
+                capture_output=True,
+                text=True,
+                encoding='utf-8'
+            )
+
+            # 输出脚本输出（只输出 info 级别）
+            for line in result.stdout.split('\n'):
+                if line.strip() and ('INFO' in line or '处理' in line):
+                    self.log(line.strip(), "INFO")
+
+            # 输出错误信息
+            if result.stderr:
+                for line in result.stderr.split('\n'):
+                    if line.strip():
+                        self.log(line.strip(), "ERROR")
+
+            if result.returncode == 0:
+                self.log("元数据处理成功", "INFO")
+            else:
+                self.log(f"元数据处理失败，错误代码: {result.returncode}", "ERROR")
+
+        except Exception as e:
+            self.log(f"执行元数据脚本异常: {e}", "ERROR")
+
     def decrypt_file(self, input_file, retry_count=0):
         """解密单个文件"""
         if retry_count >= self.max_retries:
@@ -461,7 +515,9 @@ class QQMusicDecryptorCLI:
                 except:
                     pass
 
-                if output_file.lower().endswith('.flac'):
+                # 跳过解密时的元数据修改
+                # 元数据将在所有文件解密完成后统一处理
+                if not self.skip_metadata_during_decrypt and output_file.lower().endswith('.flac'):
                     self.add_flac_metadata(output_file)
 
                 self.copy_lyrics_file(input_file, output_file)
@@ -574,10 +630,23 @@ class QQMusicDecryptorCLI:
         
         self.stats['duration'] = duration
         self.stats['speed'] = speed
-        
+
+        # 解密完成后统一处理元数据（批量模式）
+        if self.metadata_processing_mode == 'batch':
+            self.log("=" * 60, "INFO")
+            self.log("解密完成，开始统一处理元数据", "INFO")
+            self.log("=" * 60, "INFO")
+
+            # 调用批量元数据处理
+            self.run_supplement_metadata()
+
+            self.log("=" * 60, "INFO")
+            self.log("元数据处理完成", "INFO")
+            self.log("=" * 60, "INFO")
+
         # 打印完成通知
         self.print_completion_notice()
-        
+
         # 保存统计信息
         self.save_stats()
         
@@ -590,23 +659,23 @@ class QQMusicDecryptorCLI:
         duration_sec = self.stats['duration'] % 60
         
         print("\n" + "="*60)
-        print("  🎉 解密任务完成！")
+        print("  解密任务完成！")
         print("="*60)
         print(f"  总文件数: {self.stats['total']}")
-        print(f"  成功: {self.stats['success']} ✅")
-        print(f"  失败: {self.stats['failed']} ❌")
-        print(f"  跳过: {self.stats['skipped']} ⏭️")
+        print(f"  成功: {self.stats['success']} [OK]")
+        print(f"  失败: {self.stats['failed']} [FAIL]")
+        print(f"  跳过: {self.stats['skipped']} [SKIP]")
         print(f"  处理时间: {int(duration_min)}分{int(duration_sec)}秒")
         print(f"  平均速度: {self.stats['speed']:.2f} 文件/分钟")
         print("="*60)
-        
+
         if self.stats['failed'] > 0:
-            print("\n  ⚠️  以下文件转换失败：")
+            print("\n  以下文件转换失败：")
             for file in self.stats['failed_files']:
                 filename = os.path.basename(file)
                 print(f"     - {filename}")
             print(f"\n  详细日志: {self.config['LOGGING']['log_file']}")
-        
+
         print()
     
     def save_stats(self):

@@ -20,13 +20,19 @@ log_dir = os.path.join(os.path.dirname(__file__), 'logs')
 os.makedirs(log_dir, exist_ok=True)
 log_file = os.path.join(log_dir, 'supplement_album_metadata.log')
 
+# 默认只输出到文件
+handlers = [logging.FileHandler(log_file, encoding='utf-8')]
+
+# 根据命令行参数决定是否输出到控制台
+if '--verbose' in sys.argv or '-v' in sys.argv:
+    console_handler = logging.StreamHandler(sys.stdout)
+    console_handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
+    handlers.append(console_handler)
+
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.StreamHandler(sys.stdout),
-        logging.FileHandler(log_file, encoding='utf-8')
-    ],
+    handlers=handlers,
     force=True
 )
 logger = logging.getLogger(__name__)
@@ -776,40 +782,54 @@ def process_album_directory(album_dir, api_cache=None, options=None):
     return combined_stats
 
 if __name__ == '__main__':
-    # 获取命令行参数
-    if len(sys.argv) > 1:
-        album_dir = sys.argv[1]
-        print(f'处理专辑目录: {album_dir}')
-        logger.info(f'处理专辑目录: {album_dir}')
-    else:
-        print('用法: python supplement_album_metadata.py <专辑目录>')
-        logger.error('缺少专辑目录参数')
-        sys.exit(1)
-    
+    import argparse
+
+    parser = argparse.ArgumentParser(description='专辑元数据补充工具')
+    parser.add_argument('album_dir', help='专辑目录')
+    parser.add_argument('-v', '--verbose', action='store_true', help='详细输出')
+    parser.add_argument('--dry-run', action='store_true', help='试运行，不实际修改文件')
+
+    args = parser.parse_args()
+
+    album_dir = args.album_dir
+    verbose = args.verbose
+    dry_run = args.dry_run
+
     # 处理专辑目录
-    combined_stats = process_album_directory(album_dir, api_cache=None, options={'overwrite': True})
-    file_stats = combined_stats["file_stats"]
-    operation_stats = combined_stats["operation_stats"]
+    if not os.path.exists(album_dir):
+        print(f'错误: 目录不存在: {album_dir}')
+        sys.exit(1)
 
-    # 统计信息只记录到日志文件，不打印到控制台
+    print(f'处理专辑目录: {album_dir}')
+    logger.info(f'处理专辑目录: {album_dir}')
 
+    if dry_run:
+        print(f"[DRY RUN] 将处理目录: {album_dir}")
+        print(f"[DRY RUN] 不实际修改文件")
+        combined_stats = None
+    else:
+        combined_stats = process_album_directory(album_dir, api_cache=None, options={'overwrite': True})
+        file_stats = combined_stats["file_stats"]
+        operation_stats = combined_stats["operation_stats"]
 
-    logger.info('='*50)
-    logger.info('处理完成')
-    logger.info('='*50)
-    logger.info('')
-    logger.info(f'总文件数: {file_stats["total"]}')
-    logger.info(f'成功处理: {file_stats["processed"]}')
-    logger.info(f'无需修改: {file_stats["unchanged"]}')
-    logger.info(f'处理失败: {file_stats["failed"]}')
-    logger.info('')
-    logger.info('-'*50)
-    logger.info('操作级别统计:')
-    logger.info('-'*50)
-    logger.info(f'年份和封面: 成功 {operation_stats["year_cover"]["success"]}, '
-                f'跳过 {operation_stats["year_cover"]["skipped"]}, '
-                f'失败 {operation_stats["year_cover"]["failed"]}')
-    logger.info(f'封面保存: 保存 {operation_stats["cover_saved"]["saved"]}, '
-                f'失败 {operation_stats["cover_saved"]["failed"]}')
-    logger.info('='*50)
-    logger.info('')
+    # 输出统计信息
+    if combined_stats:
+        logger.info('='*50)
+        logger.info('处理完成')
+        logger.info('='*50)
+        logger.info('')
+        logger.info(f'总文件数: {file_stats["total"]}')
+        logger.info(f'成功处理: {file_stats["processed"]}')
+        logger.info(f'无需修改: {file_stats["unchanged"]}')
+        logger.info(f'处理失败: {file_stats["failed"]}')
+        logger.info('')
+        logger.info('-'*50)
+        logger.info('操作级别统计:')
+        logger.info('-'*50)
+        logger.info(f'年份和封面: 成功 {operation_stats["year_cover"]["success"]}, '
+                    f'跳过 {operation_stats["year_cover"]["skipped"]}, '
+                    f'失败 {operation_stats["year_cover"]["failed"]}')
+        logger.info(f'封面保存: 保存 {operation_stats["cover_saved"]["saved"]}, '
+                    f'失败 {operation_stats["cover_saved"]["failed"]}')
+        logger.info('='*50)
+        logger.info('')

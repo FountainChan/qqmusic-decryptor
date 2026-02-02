@@ -253,6 +253,10 @@ class QQMusicDecryptorGUI:
         default_delete_empty_dirs = True
         default_delete_lyrics = True
 
+        # 默认元数据处理模式配置
+        default_metadata_processing_mode = 'batch'
+        default_skip_metadata_during_decrypt = True
+
         # 读取配置文件
         config_path = os.path.join(
             os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
@@ -280,6 +284,14 @@ class QQMusicDecryptorGUI:
                         'delete_lyrics', fallback=True
                     )
 
+                    # 读取元数据处理模式配置
+                    default_metadata_processing_mode = self.config['OPTIONS'].get(
+                        'metadata_processing_mode', fallback='batch'
+                    )
+                    default_skip_metadata_during_decrypt = self.config['OPTIONS'].getboolean(
+                        'skip_metadata_during_decrypt', fallback=True
+                    )
+
                 print(f"[配置] 已加载配置文件: {config_path}")
             except Exception as e:
                 print(f"[配置] 读取配置文件失败: {e}，使用默认配置")
@@ -292,6 +304,8 @@ class QQMusicDecryptorGUI:
         self.default_delete_source = default_delete_source
         self.default_delete_empty_dirs = default_delete_empty_dirs
         self.default_delete_lyrics = default_delete_lyrics
+        self.metadata_processing_mode = default_metadata_processing_mode
+        self.skip_metadata_during_decrypt = default_skip_metadata_during_decrypt
     
     def browse_input(self):
         path = filedialog.askdirectory(title="选择加密文件目录")
@@ -490,7 +504,58 @@ class QQMusicDecryptorGUI:
         
         except Exception as e:
             self.log(f"添加元数据异常: {e}", logging.WARNING)
-    
+
+    def run_supplement_metadata(self, album_dir):
+        """
+        运行元数据补充脚本
+
+        处理整个输出目录，批量添加音轨号、封面、年份
+        """
+        import subprocess
+
+        try:
+            # 检查 supplement_album_metadata.py 是否存在
+            script_path = os.path.join(
+                os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                'supplement_album_metadata.py'
+            )
+
+            if not os.path.exists(script_path):
+                self.log(f"元数据脚本不存在: {script_path}", logging.WARNING)
+                return
+
+            # 构建命令
+            cmd = ['python', script_path, album_dir]
+
+            self.log(f"执行命令: {' '.join(cmd)}")
+
+            # 运行脚本
+            result = subprocess.run(
+                cmd,
+                capture_output=True,
+                text=True,
+                encoding='utf-8'
+            )
+
+            # 输出脚本输出
+            for line in result.stdout.split('\n'):
+                if line.strip() and ('INFO' in line or '处理' in line):
+                    self.log(line.strip())
+
+            # 输出错误信息
+            if result.stderr:
+                for line in result.stderr.split('\n'):
+                    if line.strip():
+                        self.log(line.strip(), logging.ERROR)
+
+            if result.returncode == 0:
+                self.log("元数据处理成功")
+            else:
+                self.log(f"元数据处理失败，错误代码: {result.returncode}", logging.ERROR)
+
+        except Exception as e:
+            self.log(f"执行元数据脚本异常: {e}", logging.ERROR)
+
     def run_decryption(self):
         try:
             input_dir = self.input_path.get()
@@ -599,7 +664,9 @@ class QQMusicDecryptorGUI:
                         success_files += 1
                         self.log(f"✓ 解密成功: {output_file}")
 
-                        if output_file_path.lower().endswith('.flac'):
+                        # 跳过解密时的元数据修改
+                        # 元数据将在所有文件解密完成后统一处理
+                        if not self.skip_metadata_during_decrypt and output_file_path.lower().endswith('.flac'):
                             self.add_flac_metadata(output_file_path)
 
                         self.copy_lyrics_file(encrypted_file, output_file_path)
@@ -646,6 +713,21 @@ class QQMusicDecryptorGUI:
                 self.log(f"已删除文件: {self.deleted_files}")
                 self.log(f"已删除目录: {self.deleted_dirs}")
                 self.log(f"输出目录: {output_dir}")
+
+                # 解密完成后统一处理元数据（批量模式）
+                if self.metadata_processing_mode == 'batch':
+                    self.log("=" * 50)
+                    self.log("解密完成，开始统一处理元数据")
+                    self.log("=" * 50)
+                    self.update_status("正在补充元数据...")
+
+                    # 调用批量元数据处理
+                    self.run_supplement_metadata(output_dir)
+
+                    self.log("=" * 50)
+                    self.log("元数据处理完成")
+                    self.log("=" * 50)
+
                 self.update_status("解密完成")
 
                 if failed_files == 0:
