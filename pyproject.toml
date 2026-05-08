@@ -22,5 +22,14 @@ qqmusic-gui = "qqmusic_decrypt.cli:gui_main"
 [tool.setuptools.packages.find]
 where = ["src"]
 
+[tool.ruff]
+# 允许现有代码中的模式，逐步收紧
+lint.ignore = [
+    "F401",    # 未使用的导入（一些模块级导入用于 __init__）
+    "E722",    # 裸 except（现有代码模式）
+    "F841",    # 未使用的变量（现有代码模式）
+    "F541",    # f-string 无占位符（现有代码模式）
+]
+
 [tool.setuptools.package-data]
 qqmusic_decrypt = []
