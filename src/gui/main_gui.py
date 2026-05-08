@@ -594,7 +594,11 @@ class QQMusicDecryptorGUI:
             
             # 加载解密脚本
             try:
-                hook_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "hook_qq_music.js")
+                if getattr(sys, 'frozen', False):
+                    base = sys._MEIPASS
+                else:
+                    base = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+                hook_path = os.path.join(base, "hook_qq_music.js")
                 with open(hook_path, "r", encoding="utf-8") as f:
                     script_code = f.read()
                 self.script = self.session.create_script(script_code)

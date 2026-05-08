@@ -12,7 +12,9 @@ a = Analysis(
     ['src/gui/main_gui.py'],
     pathex=[src_dir],
     binaries=[],
-    datas=[],
+    datas=[
+        ('src/hook_qq_music.js', '.'),
+    ],
     hiddenimports=[
         'metadata_utils',
         'qqmusic_api_client',
