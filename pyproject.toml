@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qqmusic-decrypt"
+version = "1.0.0"
+description = "QQ音乐加密文件批量解密工具 - 基于Frida动态插桩"
+requires-python = ">=3.8"
+dependencies = [
+    "frida==16.7.10",
+    "mutagen>=1.47.0",
+    "requests>=2.31.0",
+]
+
+[project.scripts]
+qqmusic-decrypt = "qqmusic_decrypt.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+qqmusic_decrypt = []

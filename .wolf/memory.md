@@ -43,3 +43,6 @@
 | 2026-05-08T15:04:12.407Z | edit | `check_env.bat` | ~0 tok |
 | 2026-05-08T15:04:14.133Z | edit | `check_env.bat` | ~0 tok |
 | 2026-05-08T15:04:16.471Z | edit | `check_env.bat` | ~0 tok |
+| 2026-05-08T15:16:34.392Z | write | `src\qqmusic_decrypt\__init__.py` | ~0 tok |
+| 2026-05-08T15:16:53.713Z | write | `src\qqmusic_decrypt\cli.py` | ~990 tok |
+| 2026-05-08T15:17:09.584Z | write | `pyproject.toml` | ~134 tok |

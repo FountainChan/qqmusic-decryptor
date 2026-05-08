@@ -116,3 +116,12 @@ OpenSpec 变更提案系统。
 ## src\gui/
 
 - `src\gui\main_gui.py` -- main_gui.py (~0 tok)
+
+## src\qqmusic_decrypt/
+- `src\qqmusic_decrypt\cli.py` -- """ (~990 tok)
+
+- `src\qqmusic_decrypt\__init__.py` -- __init__.py (~0 tok)
+
+## root/
+
+- `pyproject.toml` -- [build-system] (~134 tok)

@@ -1,0 +1,2 @@
+[console_scripts]
+qqmusic-decrypt = qqmusic_decrypt.cli:main

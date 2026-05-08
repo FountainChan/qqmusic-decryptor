@@ -1,13 +1,13 @@
 {
   "lifetime": {
-    "total_tokens_estimated": 23060,
-    "total_reads": 199,
-    "total_writes": 148,
-    "total_sessions": 11,
-    "anatomy_hits": 82,
-    "anatomy_misses": 117,
-    "repeated_reads_warned": 25,
-    "estimated_savings_vs_bare": 23900
+    "total_tokens_estimated": 27842,
+    "total_reads": 250,
+    "total_writes": 214,
+    "total_sessions": 13,
+    "anatomy_hits": 115,
+    "anatomy_misses": 135,
+    "repeated_reads_warned": 39,
+    "estimated_savings_vs_bare": 34700
   },
   "sessions": [
     {
@@ -140,6 +140,30 @@
       "anatomy_hits": 13,
       "anatomy_misses": 9,
       "repeated_reads_warned": 4,
+      "cerebrum_warnings": 0
+    },
+    {
+      "id": "session-1778249227441",
+      "started": "2026-05-08T14:07:07.441Z",
+      "ended": "2026-05-08T15:04:42.555Z",
+      "reads": 25,
+      "writes": 33,
+      "tokens_estimated": 2391,
+      "anatomy_hits": 16,
+      "anatomy_misses": 9,
+      "repeated_reads_warned": 7,
+      "cerebrum_warnings": 0
+    },
+    {
+      "id": "session-1778249227441",
+      "started": "2026-05-08T14:07:07.441Z",
+      "ended": "2026-05-08T15:06:08.788Z",
+      "reads": 26,
+      "writes": 33,
+      "tokens_estimated": 2391,
+      "anatomy_hits": 17,
+      "anatomy_misses": 9,
+      "repeated_reads_warned": 7,
       "cerebrum_warnings": 0
     }
   ]

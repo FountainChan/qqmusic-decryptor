@@ -1,0 +1,3 @@
+gui
+logs
+qqmusic_decrypt
