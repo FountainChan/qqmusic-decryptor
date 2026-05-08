@@ -43,6 +43,8 @@ jobs:
           pip install -e .
 
       - name: Verify CLI entry points
+        env:
+          PYTHONIOENCODING: utf-8
         run: |
           qqmusic-decrypt --help
           qqmusic-meta --help
