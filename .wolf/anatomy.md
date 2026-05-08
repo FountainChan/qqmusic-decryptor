@@ -51,7 +51,7 @@
 ### src/gui/ (GUI 独立版本)
 - `main_gui.py` -- tkinter GUI主程序，Frida解密/进度显示/配置管理 (~11600 tok)
 - `hook_qq_music.js` -- GUI版独立 Frida Hook 脚本 (~1400 tok)
-- `README.md` -- GUI版说明文档 (~2600 tok)
+- `README.md` -- <p align="center"> (~1432 tok)
 - `LICENSE` -- MIT 许可证
 - `.gitignore` -- GUI目录 git 忽略规则
 - `requirements.txt` -- GUI版依赖声明（空文件）
@@ -118,10 +118,11 @@ OpenSpec 变更提案系统。
 - `src\gui\main_gui.py` -- main_gui.py (~0 tok)
 
 ## src\qqmusic_decrypt/
-- `src\qqmusic_decrypt\cli.py` -- """ (~990 tok)
+- `src\qqmusic_decrypt\cli.py` -- cli.py (~0 tok)
 
 - `src\qqmusic_decrypt\__init__.py` -- __init__.py (~0 tok)
 
 ## root/
+- `README.zh-CN.md` -- <p align="center"> (~978 tok)
 
-- `pyproject.toml` -- [build-system] (~134 tok)
+- `pyproject.toml` -- pyproject.toml (~0 tok)

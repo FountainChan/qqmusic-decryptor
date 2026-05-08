@@ -537,15 +537,16 @@ class QQMusicDecryptorGUI:
             )
 
             # 输出脚本输出
-            for line in result.stdout.split('\n'):
+            stdout = result.stdout or ''
+            for line in stdout.split('\n'):
                 if line.strip() and ('INFO' in line or '处理' in line):
                     self.log(line.strip())
 
             # 输出错误信息
-            if result.stderr:
-                for line in result.stderr.split('\n'):
-                    if line.strip():
-                        self.log(line.strip(), logging.ERROR)
+            stderr = result.stderr or ''
+            for line in stderr.split('\n'):
+                if line.strip():
+                    self.log(line.strip(), logging.ERROR)
 
             if result.returncode == 0:
                 self.log("元数据处理成功")

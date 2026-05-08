@@ -46,3 +46,10 @@
 | 2026-05-08T15:16:34.392Z | write | `src\qqmusic_decrypt\__init__.py` | ~0 tok |
 | 2026-05-08T15:16:53.713Z | write | `src\qqmusic_decrypt\cli.py` | ~990 tok |
 | 2026-05-08T15:17:09.584Z | write | `pyproject.toml` | ~134 tok |
+| 2026-05-08T15:53:40.154Z | edit | `src\qqmusic_decrypt\cli.py` | ~0 tok |
+| 2026-05-08T15:54:01.187Z | edit | `pyproject.toml` | ~0 tok |
+| 2026-05-08T16:10:28.494Z | edit | `src\gui\main_gui.py` | ~0 tok |
+| 2026-05-08T16:16:22.479Z | edit | `src\qqmusic_decrypt\cli.py` | ~0 tok |
+| 2026-05-08T16:16:24.798Z | edit | `src\qqmusic_decrypt\cli.py` | ~0 tok |
+| 2026-05-08T16:32:47.396Z | write | `README.md` | ~1432 tok |
+| 2026-05-08T16:33:40.110Z | write | `README.zh-CN.md` | ~978 tok |

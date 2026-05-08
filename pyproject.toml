@@ -15,6 +15,8 @@ dependencies = [
 
 [project.scripts]
 qqmusic-decrypt = "qqmusic_decrypt.cli:main"
+qqmusic-meta = "qqmusic_decrypt.cli:supplement_main"
+qqmusic-gui = "qqmusic_decrypt.cli:gui_main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

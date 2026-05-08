@@ -1,13 +1,13 @@
 {
   "lifetime": {
-    "total_tokens_estimated": 27842,
-    "total_reads": 250,
-    "total_writes": 214,
-    "total_sessions": 13,
-    "anatomy_hits": 115,
-    "anatomy_misses": 135,
-    "repeated_reads_warned": 39,
-    "estimated_savings_vs_bare": 34700
+    "total_tokens_estimated": 48932,
+    "total_reads": 432,
+    "total_writes": 440,
+    "total_sessions": 19,
+    "anatomy_hits": 225,
+    "anatomy_misses": 207,
+    "repeated_reads_warned": 97,
+    "estimated_savings_vs_bare": 74100
   },
   "sessions": [
     {
@@ -164,6 +164,78 @@
       "anatomy_hits": 17,
       "anatomy_misses": 9,
       "repeated_reads_warned": 7,
+      "cerebrum_warnings": 0
+    },
+    {
+      "id": "session-1778249227441",
+      "started": "2026-05-08T14:07:07.441Z",
+      "ended": "2026-05-08T15:19:31.224Z",
+      "reads": 29,
+      "writes": 36,
+      "tokens_estimated": 3515,
+      "anatomy_hits": 17,
+      "anatomy_misses": 12,
+      "repeated_reads_warned": 9,
+      "cerebrum_warnings": 0
+    },
+    {
+      "id": "session-1778249227441",
+      "started": "2026-05-08T14:07:07.441Z",
+      "ended": "2026-05-08T15:47:57.749Z",
+      "reads": 29,
+      "writes": 36,
+      "tokens_estimated": 3515,
+      "anatomy_hits": 17,
+      "anatomy_misses": 12,
+      "repeated_reads_warned": 9,
+      "cerebrum_warnings": 0
+    },
+    {
+      "id": "session-1778249227441",
+      "started": "2026-05-08T14:07:07.441Z",
+      "ended": "2026-05-08T15:49:52.181Z",
+      "reads": 29,
+      "writes": 36,
+      "tokens_estimated": 3515,
+      "anatomy_hits": 17,
+      "anatomy_misses": 12,
+      "repeated_reads_warned": 9,
+      "cerebrum_warnings": 0
+    },
+    {
+      "id": "session-1778249227441",
+      "started": "2026-05-08T14:07:07.441Z",
+      "ended": "2026-05-08T15:58:48.811Z",
+      "reads": 30,
+      "writes": 38,
+      "tokens_estimated": 3515,
+      "anatomy_hits": 18,
+      "anatomy_misses": 12,
+      "repeated_reads_warned": 9,
+      "cerebrum_warnings": 0
+    },
+    {
+      "id": "session-1778249227441",
+      "started": "2026-05-08T14:07:07.441Z",
+      "ended": "2026-05-08T16:11:12.133Z",
+      "reads": 32,
+      "writes": 39,
+      "tokens_estimated": 3515,
+      "anatomy_hits": 20,
+      "anatomy_misses": 12,
+      "repeated_reads_warned": 11,
+      "cerebrum_warnings": 0
+    },
+    {
+      "id": "session-1778249227441",
+      "started": "2026-05-08T14:07:07.441Z",
+      "ended": "2026-05-08T16:16:47.675Z",
+      "reads": 33,
+      "writes": 41,
+      "tokens_estimated": 3515,
+      "anatomy_hits": 21,
+      "anatomy_misses": 12,
+      "repeated_reads_warned": 11,
       "cerebrum_warnings": 0
     }
   ]
