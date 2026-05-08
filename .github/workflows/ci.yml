@@ -3,8 +3,12 @@ name: CI
 on:
   push:
     branches: [master, main]
+    tags: [v*]
   pull_request:
     branches: [master, main]
+
+permissions:
+  contents: write
 
 jobs:
   lint:
@@ -69,8 +73,23 @@ jobs:
       - name: Build GUI executable
         run: pyinstaller build.spec
 
-      - name: Upload artifact
+      - name: Package as zip
+        run: |
+          Compress-Archive -Path dist/QQMusicDecryptor -DestinationPath QQMusicDecryptor-windows-x64.zip
+
+      - name: Upload to Release
+        if: startsWith(github.ref, 'refs/tags/v')
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "${{ github.ref_name }}" `
+            --title "Release ${{ github.ref_name }}" `
+            --notes "自动打包的 QQMusicDecryptor GUI 可执行文件。" 2>$null
+          gh release upload "${{ github.ref_name }}" QQMusicDecryptor-windows-x64.zip --clobber
+
+      - name: Upload artifact (branch build)
+        if: ${{ ! startsWith(github.ref, 'refs/tags/v') }}
         uses: actions/upload-artifact@v4
         with:
           name: QQMusicDecryptor-windows-x64
-          path: dist/QQMusicDecryptor/
+          path: QQMusicDecryptor-windows-x64.zip
