@@ -21,7 +21,7 @@ echo "[OK] 找到 Python: $(python --version)"
 echo ""
 
 # 检查 GUI 文件
-GUI_FILE="gui_backup/main_gui.py"
+GUI_FILE="src/gui/main_gui.py"
 if [ ! -f "$GUI_FILE" ]; then
     echo "[错误] 找不到 $GUI_FILE"
     exit 1

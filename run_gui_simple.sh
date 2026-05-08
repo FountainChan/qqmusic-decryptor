@@ -12,7 +12,7 @@ echo "脚本目录: $SCRIPT_DIR"
 echo ""
 
 # 运行 GUI 程序
-python gui_backup/main_gui.py
+python src/gui/main_gui.py
 
 # 检查执行结果
 if [ $? -ne 0 ]; then

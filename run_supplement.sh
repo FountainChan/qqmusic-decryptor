@@ -87,7 +87,7 @@ fi
 echo "开始处理..."
 echo ""
 
-python "$SCRIPT_DIR/supplement_album_metadata.py" "$INPUT_DIR" "$@"
+python "$SCRIPT_DIR/src/supplement_album_metadata.py" "$INPUT_DIR" "$@"
 
 # 检查执行结果
 if [ $? -ne 0 ]; then

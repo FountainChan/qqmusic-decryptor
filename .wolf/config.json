@@ -1,0 +1,6 @@
+{
+  "enabled": true,
+  "track_tokens": true,
+  "warn_repeated_reads": true,
+  "enforce_cerebrum": true
+}

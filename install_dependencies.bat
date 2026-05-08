@@ -33,17 +33,17 @@ echo [✓] 依赖安装成功
 echo.
 
 echo [3/3] 检查frida-server...
-if not exist "frida-server.exe" (
-    echo [警告] frida-server.exe未找到
+if not exist "three-party\frida-server.exe" (
+    echo [警告] three-party\frida-server.exe未找到
     echo.
     echo 请按以下步骤下载和安装frida-server：
     echo 1. 访问: https://github.com/frida/frida/releases
     echo 2. 下载: frida-server-16.7.10-windows-x86_64.exe.xz
-    echo 3. 解压后放到当前目录
+    echo 3. 解压后放到 three-party\ 目录
     echo 4. 重命名为: frida-server.exe
     echo 5. 以管理员身份运行
 ) else (
-    echo [✓] frida-server.exe已找到
+    echo [✓] three-party\frida-server.exe已找到
 )
 echo.
 

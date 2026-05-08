@@ -26,7 +26,7 @@ echo [%date% %time%] 开始执行
 echo.
 
 REM 运行CLI解密工具
-python main_cli.py --config "config.ini" --verbose
+python src/main_cli.py --config "config.ini" --verbose
 
 set RESULT=%errorlevel%
 

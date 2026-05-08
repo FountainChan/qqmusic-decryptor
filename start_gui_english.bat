@@ -38,15 +38,15 @@ echo.
 echo [3/4] Starting GUI...
 echo.
 
-if not exist "gui_backup\main_gui.py" (
-    echo [FAIL] GUI file not found: gui_backup\main_gui.py
+if not exist "src\gui\main_gui.py" (
+    echo [FAIL] GUI file not found: src\gui\main_gui.py
     echo.
     pause
     exit /b 1
 )
 
-echo Command: pythonw gui_backup\main_gui.py
-start pythonw gui_backup\main_gui.py
+echo Command: pythonw src\gui\main_gui.py
+start pythonw src\gui\main_gui.py
 
 echo.
 echo [SUCCESS] GUI window opened!

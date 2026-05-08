@@ -83,8 +83,8 @@ echo ""
 echo "检查 6: 目录结构"
 DIRS_OK=true
 
-if [ ! -d "gui_backup" ]; then
-    echo "[FAIL] 缺少 gui_backup 目录"
+if [ ! -d "src/gui" ]; then
+    echo "[FAIL] 缺少 src/gui 目录"
     DIRS_OK=false
 fi
 
@@ -93,8 +93,8 @@ if [ ! -d "logs" ]; then
     DIRS_OK=false
 fi
 
-if [ ! -f "hook_qq_music.js" ]; then
-    echo "[FAIL] 缺少 hook_qq_music.js"
+if [ ! -f "src/hook_qq_music.js" ]; then
+    echo "[FAIL] 缺少 src/hook_qq_music.js"
     DIRS_OK=false
 fi
 

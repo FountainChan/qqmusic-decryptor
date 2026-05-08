@@ -20,7 +20,7 @@ fi
 echo "[OK] 找到 Python: $(python --version)"
 
 # 检查 CLI 文件
-CLI_FILE="main_cli.py"
+CLI_FILE="src/main_cli.py"
 if [ ! -f "$CLI_FILE" ]; then
     echo "[错误] 找不到 $CLI_FILE"
     exit 1

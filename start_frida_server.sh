@@ -12,13 +12,13 @@ echo "========================================"
 echo ""
 
 # 检查 frida-server 是否存在
-if [ ! -f "frida-server.exe" ]; then
-    echo "[错误] 未找到 frida-server.exe"
+if [ ! -f "three-party/frida-server.exe" ]; then
+    echo "[错误] 未找到 three-party/frida-server.exe"
     echo ""
     echo "请按以下步骤下载和安装 frida-server："
     echo "1. 访问: https://github.com/frida/frida/releases"
     echo "2. 下载: frida-server-16.7.10-windows-x86_64.exe.xz"
-    echo "3. 解压后放到当前目录"
+    echo "3. 解压后放到 three-party/ 目录"
     echo "4. 重命名为: frida-server.exe"
     echo ""
     exit 1
@@ -37,7 +37,7 @@ echo "========================================"
 echo ""
 
 # 启动 frida-server
-./frida-server.exe
+./three-party/frida-server.exe
 
 echo ""
 echo "Frida Server 已停止"

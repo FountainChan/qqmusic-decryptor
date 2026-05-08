@@ -93,7 +93,7 @@ if exist "%INPUT_DIR%\*" (
 REM Run Python script
 echo Starting process...
 echo.
-python "%SCRIPT_DIR%supplement_album_metadata.py" "%INPUT_DIR%"
+python "%SCRIPT_DIR%src\supplement_album_metadata.py" "%INPUT_DIR%"
 
 REM Check execution result
 if %errorlevel% neq 0 (

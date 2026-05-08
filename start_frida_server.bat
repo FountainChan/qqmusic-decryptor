@@ -23,20 +23,20 @@ echo [✓] 管理员权限确认
 echo.
 
 REM 检查frida-server是否存在
-if not exist "frida-server.exe" (
-    echo [错误] 未找到 frida-server.exe
+if not exist "three-party\frida-server.exe" (
+    echo [错误] 未找到 three-party\frida-server.exe
     echo.
     echo 请按以下步骤下载和安装frida-server：
     echo 1. 访问: https://github.com/frida/frida/releases
     echo 2. 下载: frida-server-16.7.10-windows-x86_64.exe.xz
-    echo 3. 解压后放到当前目录
+    echo 3. 解压后放到 three-party\ 目录
     echo 4. 重命名为: frida-server.exe
     echo.
     pause
     exit /b 1
 )
 
-echo [✓] 找到 frida-server.exe
+echo [✓] 找到 three-party\frida-server.exe
 echo.
 echo 启动 frida-server...
 echo.
@@ -48,7 +48,7 @@ echo   3. 完成解密后可以关闭
 echo ========================================
 echo.
 
-start /wait frida-server.exe
+start /wait three-party\frida-server.exe
 
 echo.
 echo Frida Server 已停止

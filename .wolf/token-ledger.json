@@ -1,0 +1,146 @@
+{
+  "lifetime": {
+    "total_tokens_estimated": 23060,
+    "total_reads": 199,
+    "total_writes": 148,
+    "total_sessions": 11,
+    "anatomy_hits": 82,
+    "anatomy_misses": 117,
+    "repeated_reads_warned": 25,
+    "estimated_savings_vs_bare": 23900
+  },
+  "sessions": [
+    {
+      "id": "session-1778245183634",
+      "started": "2026-05-08T12:59:43.634Z",
+      "ended": "2026-05-08T13:45:20.476Z",
+      "reads": 8,
+      "writes": 1,
+      "tokens_estimated": 1054,
+      "anatomy_hits": 0,
+      "anatomy_misses": 8,
+      "repeated_reads_warned": 0,
+      "cerebrum_warnings": 0
+    },
+    {
+      "id": "session-1778245183634",
+      "started": "2026-05-08T12:59:43.634Z",
+      "ended": "2026-05-08T13:48:19.393Z",
+      "reads": 9,
+      "writes": 3,
+      "tokens_estimated": 1054,
+      "anatomy_hits": 1,
+      "anatomy_misses": 8,
+      "repeated_reads_warned": 0,
+      "cerebrum_warnings": 0
+    },
+    {
+      "id": "session-1778245183634",
+      "started": "2026-05-08T12:59:43.634Z",
+      "ended": "2026-05-08T13:52:06.450Z",
+      "reads": 18,
+      "writes": 4,
+      "tokens_estimated": 1874,
+      "anatomy_hits": 1,
+      "anatomy_misses": 17,
+      "repeated_reads_warned": 1,
+      "cerebrum_warnings": 0
+    },
+    {
+      "id": "session-1778245183634",
+      "started": "2026-05-08T12:59:43.634Z",
+      "ended": "2026-05-08T13:56:49.423Z",
+      "reads": 19,
+      "writes": 4,
+      "tokens_estimated": 1874,
+      "anatomy_hits": 1,
+      "anatomy_misses": 18,
+      "repeated_reads_warned": 2,
+      "cerebrum_warnings": 0
+    },
+    {
+      "id": "session-1778245183634",
+      "started": "2026-05-08T12:59:43.634Z",
+      "ended": "2026-05-08T14:00:25.035Z",
+      "reads": 19,
+      "writes": 6,
+      "tokens_estimated": 2858,
+      "anatomy_hits": 1,
+      "anatomy_misses": 18,
+      "repeated_reads_warned": 2,
+      "cerebrum_warnings": 0
+    },
+    {
+      "id": "session-1778249227441",
+      "started": "2026-05-08T14:07:07.441Z",
+      "ended": "2026-05-08T14:38:52.098Z",
+      "reads": 19,
+      "writes": 21,
+      "tokens_estimated": 2391,
+      "anatomy_hits": 13,
+      "anatomy_misses": 6,
+      "repeated_reads_warned": 2,
+      "cerebrum_warnings": 0
+    },
+    {
+      "id": "session-1778249227441",
+      "started": "2026-05-08T14:07:07.441Z",
+      "ended": "2026-05-08T14:42:24.900Z",
+      "reads": 19,
+      "writes": 21,
+      "tokens_estimated": 2391,
+      "anatomy_hits": 13,
+      "anatomy_misses": 6,
+      "repeated_reads_warned": 2,
+      "cerebrum_warnings": 0
+    },
+    {
+      "id": "session-1778249227441",
+      "started": "2026-05-08T14:07:07.441Z",
+      "ended": "2026-05-08T14:49:01.471Z",
+      "reads": 22,
+      "writes": 22,
+      "tokens_estimated": 2391,
+      "anatomy_hits": 13,
+      "anatomy_misses": 9,
+      "repeated_reads_warned": 4,
+      "cerebrum_warnings": 0
+    },
+    {
+      "id": "session-1778249227441",
+      "started": "2026-05-08T14:07:07.441Z",
+      "ended": "2026-05-08T14:55:40.287Z",
+      "reads": 22,
+      "writes": 22,
+      "tokens_estimated": 2391,
+      "anatomy_hits": 13,
+      "anatomy_misses": 9,
+      "repeated_reads_warned": 4,
+      "cerebrum_warnings": 0
+    },
+    {
+      "id": "session-1778249227441",
+      "started": "2026-05-08T14:07:07.441Z",
+      "ended": "2026-05-08T14:57:03.696Z",
+      "reads": 22,
+      "writes": 22,
+      "tokens_estimated": 2391,
+      "anatomy_hits": 13,
+      "anatomy_misses": 9,
+      "repeated_reads_warned": 4,
+      "cerebrum_warnings": 0
+    },
+    {
+      "id": "session-1778249227441",
+      "started": "2026-05-08T14:07:07.441Z",
+      "ended": "2026-05-08T14:59:57.069Z",
+      "reads": 22,
+      "writes": 22,
+      "tokens_estimated": 2391,
+      "anatomy_hits": 13,
+      "anatomy_misses": 9,
+      "repeated_reads_warned": 4,
+      "cerebrum_warnings": 0
+    }
+  ]
+}
