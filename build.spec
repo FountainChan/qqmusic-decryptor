@@ -30,7 +30,6 @@ a = Analysis(
     excludes=[
         'tkinter.test',
         'unittest',
-        'email',
         'http.server',
         'pydoc',
     ],
