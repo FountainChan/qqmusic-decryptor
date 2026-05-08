@@ -1,8 +1,0 @@
-Metadata-Version: 2.4
-Name: qqmusic-decrypt
-Version: 1.0.0
-Summary: QQ音乐加密文件批量解密工具 - 基于Frida动态插桩
-Requires-Python: >=3.8
-Requires-Dist: frida==16.7.10
-Requires-Dist: mutagen>=1.47.0
-Requires-Dist: requests>=2.31.0

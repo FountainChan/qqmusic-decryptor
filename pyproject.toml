@@ -6,6 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "qqmusic-decrypt"
 version = "1.0.0"
 description = "QQ音乐加密文件批量解密工具 - 基于Frida动态插桩"
+license = {text = "AGPL-3.0-or-later"}
 requires-python = ">=3.8"
 dependencies = [
     "frida==16.7.10",

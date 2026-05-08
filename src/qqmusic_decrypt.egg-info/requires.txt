@@ -1,3 +1,0 @@
-frida==16.7.10
-mutagen>=1.47.0
-requests>=2.31.0

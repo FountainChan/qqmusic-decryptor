@@ -1,4 +1,0 @@
-[console_scripts]
-qqmusic-decrypt = qqmusic_decrypt.cli:main
-qqmusic-gui = qqmusic_decrypt.cli:gui_main
-qqmusic-meta = qqmusic_decrypt.cli:supplement_main

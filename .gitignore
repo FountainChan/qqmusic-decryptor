@@ -1,12 +1,33 @@
-# Ignore all hidden directories (agent state, IDE config, etc.)
-.*/
-
+# Python
 __pycache__/
+*.py[cod]
+*.egg-info/
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build artifacts
 *.bak
 *.backup
-drops/
+dist/
+build/
+
+# Logs
 logs/*
-*.pyc
-*.pyo
-*.log
-*.exe.xz
+!logs/.gitkeep
+
+# Tool/agent state directories
+.sisyphus/
+.wolf/
+
+# Internal process docs (not for open source)
+docs/*/
+!docs/guide/
+
+# Temp file created by Git Bash `>nul` redirect
+# (Some shell commands that intend to use Windows NUL device
+#  will create this file in Git Bash/MSYS2 environment)
+nul

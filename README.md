@@ -1,8 +1,10 @@
 
     <p align="center">
+      <img src="https://img.shields.io/github/v/release/FountainChan/qqmusic-decryptor" alt="GitHub release">
+      <img src="https://img.shields.io/badge/license-AGPLv3-blue" alt="License">
       <img src="https://img.shields.io/badge/python-3.8%2B-blue" alt="Python">
       <img src="https://img.shields.io/badge/frida-16.7.10-green" alt="Frida">
-      <img src="https://img.shields.io/badge/license-MIT-yellow" alt="License">
+      <img src="https://img.shields.io/badge/PRs-welcome-brightgreen" alt="PRs Welcome">
     </p>
 
 # 🎵 QQ Music Decryptor
@@ -192,7 +194,7 @@ The tool is designed for Windows, as it hooks into `QQMusic.exe`. The CLI and me
 
 ## 📜 License
 
-[MIT](LICENSE) © 2026 — Free to use, modify, and share. Open source forever. 🎵
+[GNU AGPL v3](LICENSE) © 2026 — Free to use, modify, and share. Open source forever. 🎵
 
 ---
 
@@ -200,4 +202,4 @@ The tool is designed for Windows, as it hooks into `QQMusic.exe`. The CLI and me
 
 - [Frida](https://frida.re/) — Dynamic instrumentation toolkit
 - [mutagen](https://mutagen.readthedocs.io/) — Audio metadata handling
-- [strelitzia-reg/qqmusic-decryptor](https://github.com/strelitzia-reg/qqmusic-decryptor) — Inspiration for the GUI version
+- [strelitzia-reg/qqmusic-decryptor](https://github.com/strelitzia-reg/qqmusic-decryptor) — The original project that inspired this tool. The GUI (`src/gui/`) is modified from this project. Big thanks! 🙌
