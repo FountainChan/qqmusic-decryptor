@@ -37,7 +37,7 @@
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/your-username/qqmusic-decryptor.git
+git clone https://github.com/FountainChan/qqmusic-decryptor.git
 cd qqmusic-decryptor
 
 # 2. Install Python dependencies

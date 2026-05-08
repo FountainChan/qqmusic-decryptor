@@ -37,7 +37,7 @@
 
 ```bash
 # 1. 克隆仓库
-git clone https://github.com/your-username/qqmusic-decryptor.git
+git clone https://github.com/FountainChan/qqmusic-decryptor.git
 cd qqmusic-decryptor
 
 # 2. 安装 Python 依赖

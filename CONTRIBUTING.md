@@ -22,7 +22,7 @@ Thank you for considering contributing! This project is licensed under **AGPL v3
 ### 3. Development Setup
 
 ```bash
-git clone https://github.com/your-username/qqmusic-decryptor.git
+git clone https://github.com/FountainChan/qqmusic-decryptor.git
 cd qqmusic-decryptor
 pip install -r requirements.txt
 pip install -e .  # for global CLI commands
