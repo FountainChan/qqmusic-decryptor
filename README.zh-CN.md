@@ -1,11 +1,9 @@
 
-    <p align="center">
-      <img src="https://img.shields.io/github/v/release/FountainChan/qqmusic-decryptor" alt="GitHub release">
-      <img src="https://img.shields.io/badge/license-AGPLv3-blue" alt="License">
-      <img src="https://img.shields.io/badge/python-3.8%2B-blue" alt="Python">
-      <img src="https://img.shields.io/badge/frida-16.7.10-green" alt="Frida">
-      <img src="https://img.shields.io/badge/PRs-welcome-brightgreen" alt="PRs Welcome">
-    </p>
+[![GitHub release](https://img.shields.io/github/v/release/FountainChan/qqmusic-decryptor)](https://github.com/FountainChan/qqmusic-decryptor/releases)
+[![License: AGPL v3](https://img.shields.io/badge/License-AGPLv3-blue)](https://www.gnu.org/licenses/agpl-3.0)
+[![Python](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/)
+[![Frida](https://img.shields.io/badge/frida-16.7.10-green)](https://frida.re/)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)](CONTRIBUTING.md)
 
 # 🎵 QQ Music 解密工具
 
