@@ -31,18 +31,18 @@ if errorlevel 1 (
 )
 echo.
 
-echo [3/6] 检查frida-server进程...
-tasklist /FI "IMAGENAME eq frida-server.exe" 2>NUL | find /I /N "frida-server.exe">NUL
-if "%ERRORLEVEL%" neq "0" (
-    echo [✗] frida-server未运行
-    echo     请以管理员身份运行: start_frida_server.bat
+echo [3/6] 检查frida可用...
+python -c "import frida; print('OK')" >nul 2>&1
+if errorlevel 1 (
+    echo [✗] frida未安装
+    echo     运行: pip install -r requirements.txt
     set MISSING=1
 ) else (
-    echo [✓] frida-server正在运行
+    echo [✓] frida已安装
 )
 echo.
 
-echo [4/6] 检查QQ Music进程...
+echo [4/5] 检查QQ Music进程...
 tasklist /FI "IMAGENAME eq QQMusic.exe" 2>NUL | find /I /N "QQMusic.exe">NUL
 if "%ERRORLEVEL%" neq "0" (
     echo [✗] QQ Music未运行
@@ -62,7 +62,7 @@ if "%ERRORLEVEL%" neq "0" (
 )
 echo.
 
-echo [5/6] 检查输入目录...
+echo [5/5] 检查输入目录...
 if not exist "G:\QQMusic\Download" (
     echo [✗] 输入目录不存在：G:\QQMusic\Download
     set MISSING=1
@@ -71,7 +71,7 @@ if not exist "G:\QQMusic\Download" (
 )
 echo.
 
-echo [6/6] 检查输出目录...
+REM 输出目录检查 (原编号6)
 if not exist "G:\QQMusic\Decrypted" (
     echo     创建输出目录: G:\QQMusic\Decrypted
     mkdir "G:\QQMusic\Decrypted"

@@ -38,7 +38,6 @@ pythonw "$GUI_FILE" &
 echo "GUI 已启动！"
 echo ""
 echo "提示："
-echo "- 确保 frida-server 正在运行（管理员权限）"
 echo "- 确保 QQ Music 已启动并登录 VIP"
 echo ""
 echo "日志文件: logs/decrypt.log"

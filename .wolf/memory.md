@@ -32,3 +32,14 @@
 | 2026-05-08T14:35:52.762Z | edit | `src\gui\main_gui.py` | ~0 tok |
 | 2026-05-08T14:37:27.725Z | write | `.wolf\anatomy.md` | ~734 tok |
 | 2026-05-08T14:47:54.613Z | edit | `src\gui\main_gui.py` | ~0 tok |
+| 2026-05-08T15:02:44.121Z | edit | `check_env.sh` | ~0 tok |
+| 2026-05-08T15:02:46.487Z | edit | `check_env.sh` | ~0 tok |
+| 2026-05-08T15:02:48.720Z | edit | `start_gui.sh` | ~0 tok |
+| 2026-05-08T15:02:53.532Z | edit | `check_env.bat` | ~0 tok |
+| 2026-05-08T15:02:58.821Z | edit | `install_dependencies.bat` | ~0 tok |
+| 2026-05-08T15:03:01.437Z | edit | `install_dependencies.bat` | ~0 tok |
+| 2026-05-08T15:03:26.117Z | edit | `start_gui_english.bat` | ~0 tok |
+| 2026-05-08T15:03:59.706Z | edit | `start_gui_english.bat` | ~0 tok |
+| 2026-05-08T15:04:12.407Z | edit | `check_env.bat` | ~0 tok |
+| 2026-05-08T15:04:14.133Z | edit | `check_env.bat` | ~0 tok |
+| 2026-05-08T15:04:16.471Z | edit | `check_env.bat` | ~0 tok |

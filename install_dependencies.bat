@@ -32,19 +32,8 @@ if errorlevel 1 (
 echo [✓] 依赖安装成功
 echo.
 
-echo [3/3] 检查frida-server...
-if not exist "three-party\frida-server.exe" (
-    echo [警告] three-party\frida-server.exe未找到
-    echo.
-    echo 请按以下步骤下载和安装frida-server：
-    echo 1. 访问: https://github.com/frida/frida/releases
-    echo 2. 下载: frida-server-16.7.10-windows-x86_64.exe.xz
-    echo 3. 解压后放到 three-party\ 目录
-    echo 4. 重命名为: frida-server.exe
-    echo 5. 以管理员身份运行
-) else (
-    echo [✓] three-party\frida-server.exe已找到
-)
+echo [3/3] 检查Python依赖...
+python -c "import mutagen; print('OK')" >nul 2>&1 && echo [✓] mutagen已安装 || echo [警告] mutagen未安装，如需元数据处理请运行: pip install mutagen
 echo.
 
 echo ========================================
@@ -52,8 +41,7 @@ echo   安装完成！
 echo ========================================
 echo.
 echo 下一步：
-echo 1. 以管理员身份运行: start_frida_server.bat
-echo 2. 启动QQ Music客户端
-echo 3. 运行: auto_decrypt.bat 开始解密
+echo 1. 启动QQ Music客户端
+echo 2. 运行: auto_decrypt.bat 开始解密
 echo.
 pause

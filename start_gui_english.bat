@@ -8,20 +8,18 @@ echo QQ Music Decryptor - GUI Launcher
 echo ========================================
 echo.
 
-echo [1/4] Checking frida-server...
-tasklist /FI "IMAGENAME eq frida-server.exe" 2>nul | find /c "frida-server.exe" >nul
+echo [1/3] Checking Python dependencies...
+python -c "import frida; print('OK')" >nul 2>&1
 if errorlevel 1 (
-    echo [FAIL] frida-server not running
-    echo.
-    echo Please run: start_frida_server.bat as administrator
+    echo [FAIL] frida not installed, run: pip install -r requirements.txt
     echo.
     pause
     exit /b 1
 ) else (
-    echo [PASS] frida-server is running
+    echo [PASS] frida is installed
 )
 
-echo [2/4] Checking QQ Music...
+echo [2/3] Checking QQ Music...
 tasklist /FI "IMAGENAME eq QQMusic.exe" 2>nul | find /c "QQMusic.exe" >nul
 if errorlevel 1 (
     echo [FAIL] QQ Music not running
@@ -35,7 +33,7 @@ if errorlevel 1 (
 )
 
 echo.
-echo [3/4] Starting GUI...
+echo [3/3] Starting GUI...
 echo.
 
 if not exist "src\gui\main_gui.py" (

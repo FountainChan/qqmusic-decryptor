@@ -56,8 +56,8 @@ if command -v frida-ps &> /dev/null; then
         echo "[OK] frida-server 正在运行"
         ((PASS++))
     else
-        echo "[FAIL] frida-server 未运行"
-        echo "      运行: bash start_frida_server.sh（需要管理员权限）"
+        echo "[FAIL] frida 无法连接"
+        echo "      请确保 QQ Music 正在运行"
         ((FAIL++))
     fi
 else
@@ -135,7 +135,7 @@ else
     echo ""
     echo "常见解决方案："
     echo "  1. 安装依赖: pip install -r requirements.txt"
-    echo "  2. 启动 frida-server（需要管理员）"
+    echo "  2. 启动 QQ Music 并登录 VIP"
     echo "  3. 启动 QQ Music 并登录 VIP"
 fi
 echo ""
