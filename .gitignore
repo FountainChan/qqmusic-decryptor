@@ -1,4 +1,6 @@
-nul
+# Ignore all hidden directories (agent state, IDE config, etc.)
+.*/
+
 __pycache__/
 *.bak
 *.backup
