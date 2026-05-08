@@ -126,3 +126,19 @@ OpenSpec 变更提案系统。
 - `README.zh-CN.md` -- <p align="center"> (~978 tok)
 
 - `pyproject.toml` -- pyproject.toml (~0 tok)
+
+## src\bat/
+- `src\bat\run_supplement.bat` -- run_supplement.bat (~0 tok)
+- `src\bat\install_dependencies.bat` -- install_dependencies.bat (~0 tok)
+- `src\bat\start_gui_english.bat` -- start_gui_english.bat (~0 tok)
+- `src\bat\run_gui_simple.bat` -- run_gui_simple.bat (~0 tok)
+
+- `src\bat\auto_decrypt.bat` -- auto_decrypt.bat (~0 tok)
+
+## src\shell/
+- `src\shell\check_env.sh` -- check_env.sh (~0 tok)
+- `src\shell\run_supplement.sh` -- run_supplement.sh (~0 tok)
+- `src\shell\start_gui.sh` -- start_gui.sh (~0 tok)
+- `src\shell\run_gui_simple.sh` -- run_gui_simple.sh (~0 tok)
+
+- `src\shell\auto_decrypt.sh` -- auto_decrypt.sh (~0 tok)

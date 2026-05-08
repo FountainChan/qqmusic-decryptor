@@ -1,7 +1,7 @@
 @echo off
 title QQ Music 批量解密工具
 color 0A
-cd /d "%~dp0"
+cd /d "%~dp0..\.."
 
 echo.
 echo ========================================
@@ -10,7 +10,7 @@ echo ========================================
 echo.
 
 REM 检查环境
-call check_env.bat
+call "%~dp0check_env.bat"
 if errorlevel 1 (
     echo.
     echo [错误] 环境检查失败，请解决上述问题

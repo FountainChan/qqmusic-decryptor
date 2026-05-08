@@ -53,3 +53,15 @@
 | 2026-05-08T16:16:24.798Z | edit | `src\qqmusic_decrypt\cli.py` | ~0 tok |
 | 2026-05-08T16:32:47.396Z | write | `README.md` | ~1432 tok |
 | 2026-05-08T16:33:40.110Z | write | `README.zh-CN.md` | ~978 tok |
+| 2026-05-08T16:57:55.987Z | edit | `src\bat\auto_decrypt.bat` | ~0 tok |
+| 2026-05-08T16:57:57.665Z | edit | `src\bat\auto_decrypt.bat` | ~0 tok |
+| 2026-05-08T16:57:59.218Z | edit | `src\bat\run_gui_simple.bat` | ~0 tok |
+| 2026-05-08T16:58:01.109Z | edit | `src\bat\start_gui_english.bat` | ~0 tok |
+| 2026-05-08T16:58:03.799Z | edit | `src\bat\install_dependencies.bat` | ~0 tok |
+| 2026-05-08T16:58:05.677Z | edit | `src\bat\install_dependencies.bat` | ~0 tok |
+| 2026-05-08T16:58:07.972Z | edit | `src\bat\run_supplement.bat` | ~0 tok |
+| 2026-05-08T16:58:41.992Z | edit | `src\shell\auto_decrypt.sh` | ~0 tok |
+| 2026-05-08T16:58:43.962Z | edit | `src\shell\run_gui_simple.sh` | ~0 tok |
+| 2026-05-08T16:58:45.844Z | edit | `src\shell\start_gui.sh` | ~0 tok |
+| 2026-05-08T16:58:47.995Z | edit | `src\shell\run_supplement.sh` | ~0 tok |
+| 2026-05-08T16:58:50.974Z | edit | `src\shell\check_env.sh` | ~0 tok |

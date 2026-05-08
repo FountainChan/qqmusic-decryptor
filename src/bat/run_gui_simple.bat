@@ -1,5 +1,5 @@
 @echo off
-cd /d "%~dp0"
+cd /d "%~dp0..\.."
 
 python src/gui/main_gui.py
 if errorlevel 1 (

@@ -4,7 +4,7 @@
 
 # 获取脚本所在目录
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-cd "$SCRIPT_DIR"
+cd "${SCRIPT_DIR}/../.."
 
 echo "========================================"
 echo "  QQ Music 解密工具 - GUI 启动"

@@ -1,14 +1,14 @@
 @echo off
 title QQ Music 批量解密工具 - 依赖安装
 color 0B
-cd /d "%~dp0"
+cd /d "%~dp0..\.."
 
 echo ========================================
 echo   QQ Music 解密工具 - 依赖安装
 echo ========================================
 echo.
 
-cd /d "%~dp0"
+cd /d "%~dp0..\.."
 
 echo [1/3] 检查Python...
 python --version >nul 2>&1
@@ -42,6 +42,6 @@ echo ========================================
 echo.
 echo 下一步：
 echo 1. 启动QQ Music客户端
-echo 2. 运行: auto_decrypt.bat 开始解密
+echo 2. 运行: src\bat\auto_decrypt.bat 开始解密
 echo.
 pause
