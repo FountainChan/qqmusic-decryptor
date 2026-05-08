@@ -4,7 +4,7 @@ import sys
 import os
 
 # Add src/ to analysis path so local modules can be found
-src_dir = os.path.join(os.path.dirname(__file__), 'src')
+src_dir = os.path.join(os.getcwd(), 'src')
 
 block_cipher = None
 
