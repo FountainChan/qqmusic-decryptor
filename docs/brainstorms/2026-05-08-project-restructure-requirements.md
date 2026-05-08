@@ -39,7 +39,7 @@ topic: project-restructure
 
 - 不改动 Python 脚本的函数逻辑、参数接口
 - 不改动 Frida Hook 脚本
-- 不改动 `doc/` 目录结构（已在之前整理完成）
+- 不改动 `docs/` 目录结构（已在之前整理完成）
 - 不改动 `AGENTS.md` 内容
 
 ## Key Decisions

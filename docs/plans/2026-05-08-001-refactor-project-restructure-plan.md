@@ -31,7 +31,7 @@ origin: docs/brainstorms/2026-05-08-project-restructure-requirements.md
 
 - 不改动 Python 脚本的函数逻辑和参数接口
 - 不改动 Frida Hook 脚本内容
-- 不改动 `doc/` 目录结构
+- 不改动 `docs/` 目录结构
 - 不改动 `AGENTS.md` 内容
 
 ## Context & Research
@@ -160,7 +160,7 @@ origin: docs/brainstorms/2026-05-08-project-restructure-requirements.md
 - **导入路径一致性**: 所有 Python 脚本内部导入将被统一处理，避免未来新增文件时遗漏
 - **入口脚本引用**: 所有 shell/batch 入口均需同步更新，若有遗漏则对应功能不可用
 - **AGENTS.md 目录结构部分**: 记录的是旧结构，但 scope 声明不修改其内容
-- **doc/index.md 快速导航**: 中的路径引用也需要更新
+- **docs/index.md 快速导航**: 中的路径引用也需要更新
 
 ## Risks & Dependencies
 
