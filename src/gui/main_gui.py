@@ -325,6 +325,8 @@ class QQMusicDecryptorGUI:
         self.skip_metadata_during_decrypt = default_skip_metadata_during_decrypt
     
     def _save_paths_to_config(self):
+        if not getattr(sys, 'frozen', False):
+            return
         try:
             self.config['PATHS']['input_dir'] = self.input_path.get()
             self.config['PATHS']['output_dir'] = self.output_path.get()
