@@ -324,15 +324,26 @@ class QQMusicDecryptorGUI:
         self.metadata_processing_mode = default_metadata_processing_mode
         self.skip_metadata_during_decrypt = default_skip_metadata_during_decrypt
     
+    def _save_paths_to_config(self):
+        try:
+            self.config['PATHS']['input_dir'] = self.input_path.get()
+            self.config['PATHS']['output_dir'] = self.output_path.get()
+            with open('config.ini', 'w', encoding='utf-8') as f:
+                self.config.write(f)
+        except Exception:
+            pass
+
     def browse_input(self):
         path = filedialog.askdirectory(title="选择加密文件目录")
         if path:
             self.input_path.set(path)
+            self._save_paths_to_config()
     
     def browse_output(self):
         path = filedialog.askdirectory(title="选择输出目录")
         if path:
             self.output_path.set(path)
+            self._save_paths_to_config()
     
     def log(self, message, level=logging.INFO):
         logging.getLogger().log(level, message)
