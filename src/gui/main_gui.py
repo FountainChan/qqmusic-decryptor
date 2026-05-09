@@ -524,55 +524,18 @@ class QQMusicDecryptorGUI:
 
     def run_supplement_metadata(self, album_dir):
         """
-        运行元数据补充脚本
+        运行元数据补充
 
         处理整个输出目录，批量添加音轨号、封面、年份
         """
-        import subprocess
-
         try:
-            # 检查 supplement_album_metadata.py 是否存在
-            script_path = os.path.join(
-                os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-                'supplement_album_metadata.py'
-            )
-
-            if not os.path.exists(script_path):
-                self.log(f"元数据脚本不存在: {script_path}", logging.WARNING)
-                return
-
-            # 构建命令
-            cmd = ['python', script_path, album_dir]
-
-            self.log(f"执行命令: {' '.join(cmd)}")
-
-            # 运行脚本
-            result = subprocess.run(
-                cmd,
-                capture_output=True,
-                text=True,
-                encoding='utf-8'
-            )
-
-            # 输出脚本输出
-            stdout = result.stdout or ''
-            for line in stdout.split('\n'):
-                if line.strip() and ('INFO' in line or '处理' in line):
-                    self.log(line.strip())
-
-            # 输出错误信息
-            stderr = result.stderr or ''
-            for line in stderr.split('\n'):
-                if line.strip():
-                    self.log(line.strip(), logging.ERROR)
-
-            if result.returncode == 0:
-                self.log("元数据处理成功")
-            else:
-                self.log(f"元数据处理失败，错误代码: {result.returncode}", logging.ERROR)
-
+            from supplement_album_metadata import process_album_directory
+            process_album_directory(album_dir)
+            self.log("✓ 元数据批量补充完成")
+        except ImportError as e:
+            self.log(f"导入元数据处理模块失败: {e}", logging.ERROR)
         except Exception as e:
-            self.log(f"执行元数据脚本异常: {e}", logging.ERROR)
+            self.log(f"处理元数据时出错: {e}", logging.ERROR)
 
     def run_decryption(self):
         try:

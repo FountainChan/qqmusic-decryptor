@@ -18,6 +18,7 @@ a = Analysis(
     hiddenimports=[
         'metadata_utils',
         'qqmusic_api_client',
+        'supplement_album_metadata',
         'frida',
         'mutagen',
         'mutagen.flac',
